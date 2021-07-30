@@ -1,0 +1,383 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0" />
+
+    <title>IRIRI Dining Club</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Benne&display=swap" rel="stylesheet">
+
+   
+
+
+    <link rel='stylesheet' href='css/style.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='plugins/superfish/css/superfish.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='plugins/dl-menu/component.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='plugins/font-awesome-new/css/font-awesome.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='plugins/elegant-font/style.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='plugins/fancybox/jquery.fancybox.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='plugins/flexslider/flexslider.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='css/style-responsive.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='css/style-custom.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='plugins/masterslider/public/assets/css/masterslider.main.css' type='text/css'
+          media='all' />
+    <link rel='stylesheet' href='css/master-custom.css' type='text/css' media='all' />
+
+
+</head>
+<body>
+    <header class="greennature-header-wrapper header-style-5-wrapper greennature-header-with-top-bar">
+       
+        <div id="greennature-header-substitute"></div>
+        <div class="greennature-header-inner header-inner-header-style-5">
+            <div class="greennature-header-container container">
+                <div class="greennature-header-inner-overlay"></div>
+                <!-- logo -->
+                <div class="greennature-logo">
+                    <div class="greennature-logo-inner">
+                        <a href="index.html">
+                            <img src="images/logo.png" alt="" />
+                        </a>
+                    </div>
+                    <div class="greennature-responsive-navigation dl-menuwrapper"
+                         id="greennature-responsive-navigation">
+                        <button class="dl-trigger">Open Menu</button>
+                        <ul id="menu-main-menu" class="dl-menu greennature-main-mobile-menu">
+                            <li class="menu-item menu-item-home current-menu-item page_item page-item-5680 current_page_item">
+                                <a href="/Home" aria-current="page">Home</a>
+                            </li>
+                            <li class="menu-item menu-item-home current-menu-item page_item page-item-5680 current_page_item">
+                                <a href="/AboutUs" aria-current="page">About Us</a>
+                            </li>
+                            <li class="menu-item menu-item-home current-menu-item page_item page-item-5680 current_page_item">
+                                <a href="/Event" aria-current="page">Events</a>
+                            </li>
+                            <li class="menu-item menu-item-home current-menu-item page_item page-item-5680 current_page_item">
+                                <a href="/Gallery" aria-current="page">Gallery</a>
+                            </li>
+                            @*<li class="menu-item menu-item-home current-menu-item greennature-normal-menu">
+                                <a href="/Register">Register</a>
+                            </li>*@
+                            <li class="menu-item menu-item-home current-menu-item greennature-normal-menu">
+                                <a href="/ContactUs">Contact Us</a>
+                            </li>
+                            <li class="menu-item menu-item-home current-menu-item greennature-normal-menu">
+                                <a href="/BecomeMember">Become A Member</a>
+                            </li>
+                           
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- navigation -->
+                <div class="greennature-navigation-wrapper">
+                    <nav class="greennature-navigation" id="greennature-main-navigation">
+                        <ul id="menu-main-menu-1" class="sf-menu greennature-main-menu">
+                            <li class="menu-item menu-item-home current-menu-item greennature-normal-menu">
+                                <a href="/Home">Home</a>
+                            </li>
+                            <li class="menu-item menu-item-home current-menu-item greennature-normal-menu">
+                                <a href="/AboutUs">About Us</a>
+                            </li>
+                            <li class="menu-item menu-item-home current-menu-item greennature-normal-menu">
+                                <a href="/Event"></i>Events</a>
+                            </li>
+                            <li class="menu-item menu-item-home current-menu-item greennature-normal-menu">
+                                <a href="/Gallery"></i>Gallery</a>
+                            </li>
+                            @*<li class="menu-item menu-item-home current-menu-item greennature-normal-menu">
+                                <a href="/Register">Register</a>
+                            </li>*@
+                            <li class="menu-item menu-item-home current-menu-item greennature-normal-menu">
+                                <a href="/ContactUs">Contact Us</a>
+                            </li>
+                            <li class="menu-item menu-item-home current-menu-item greennature-normal-menu">
+                                <a href="/BecomeMember">Become a Member</a>
+                            </li>
+                            <!-- <li class="menu-item menu-item-home current-menu-item greennature-normal-menu"><a
+        href="#open-modal">Subscribe to newsletter</a></li> -->
+
+
+                        </ul>
+
+
+                    </nav>
+                    <div class="greennature-navigation-gimmick" id="greennature-navigation-gimmick"></div>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </header>
+    <div>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer-wrapper">
+        @*<div class="footer-container container">
+            <div class="footer-column three columns" id="footer-widget-1">
+                <div id="text-5" class="widget widget_text greennature-item greennature-widget">
+                    <div class="textwidget">
+                        <p><img src="upload/logo.png" style="width: 170px;" alt="" /></p>
+                        <p>
+                            Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                            Morbi leo risus, porta. Etiam porta sem malesuada magna mollis euismod.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-column three columns" id="footer-widget-2">
+                <div id="text-9" class="widget widget_text greennature-item greennature-widget">
+                    <h3 class="greennature-widget-title">Contact Info</h3>
+                    <div class="clear"></div>
+                    <div class="textwidget">
+                        <span class="clear"></span><span class="greennature-space"
+                                                         style="margin-top: -6px; display: block;"></span> Address: 184 Main Collins Street West
+                        Victoria 8007
+
+                        <span class="clear"></span><span class="greennature-space"
+                                                         style="margin-top: 10px; display: block;"></span>
+
+                        <i class="greennature-icon fa fa-phone"
+                           style="vertical-align: middle; color: #fff; font-size: 16px; "></i> +1800-222-3333
+
+                        <span class="clear"></span><span class="greennature-space"
+                                                         style="margin-top: 10px; display: block;"></span>
+
+                        <i class="greennature-icon fa fa-mobile"
+                           style="vertical-align: middle; color: #fff; font-size: 20px; "></i> +1833-232-3443
+
+                        <span class="clear"></span><span class="greennature-space"
+                                                         style="margin-top: 10px; display: block;"></span>
+
+                        <i class="greennature-icon fa fa-envelope-o"
+                           style="vertical-align: middle; color: #fff; font-size: 16px; "></i>
+                        contact@greennaturewp.com
+                    </div>
+                </div>
+            </div>
+            <div class="footer-column three columns" id="footer-widget-3">
+                <div id="gdlr-recent-post-widget-5"
+                     class="widget widget_gdlr-recent-post-widget greennature-item greennature-widget">
+                    <h3 class="greennature-widget-title">Previous Events</h3>
+                    <div class="clear"></div>
+                    <div class="greennature-recent-post-widget">
+                        <div class="recent-post-widget">
+                            <div class="recent-post-widget-thumbnail">
+                                <a href="#">
+                                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+                                         alt="" width="150" height="150" />
+                                </a>
+                            </div>
+                            <div class="recent-post-widget-content">
+                                <div class="recent-post-widget-title"><a href="#">STech Submit</a></div>
+                                <div class="recent-post-widget-info">
+                                    <div class="blog-info blog-date greennature-skin-info">
+                                        <i class="fa fa-clock-o"></i><a href="#">28 Mar 2021</a>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="recent-post-widget">
+                            <div class="recent-post-widget-thumbnail">
+                                <a href="#">
+                                    <img src="https://images.unsplash.com/photo-1503428593586-e225b39bddfe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80"
+                                         alt="" width="150" height="150" />
+                                </a>
+                            </div>
+                            <div class="recent-post-widget-content">
+                                <div class="recent-post-widget-title">
+                                    <a href="#">The event</a>
+                                </div>
+                                <div class="recent-post-widget-info">
+                                    <div class="blog-info blog-date greennature-skin-info">
+                                        <i class="fa fa-clock-o"></i><a href="#">21 Mar 2021</a>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-column three columns" id="footer-widget-4">
+                <div id="gdlr-recent-portfolio2-widget-6"
+                     class="widget widget_gdlr-recent-portfolio2-widget greennature-item greennature-widget">
+                    <h3 class="greennature-widget-title">The Experience</h3>
+                    <div class="clear"></div>
+                    <div class="greennature-recent-port2-widget">
+                        <div class="recent-port-widget-thumbnail">
+                            <a href="#">
+                                <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+                                     alt="" width="150" height="150" />
+                            </a>
+                        </div>
+                        <div class="recent-port-widget-thumbnail">
+                            <a href="#">
+                                <img src="https://images.unsplash.com/photo-1515169067868-5387ec356754?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+                                     alt="" width="150" height="150" />
+                            </a>
+                        </div>
+                        <div class="recent-port-widget-thumbnail">
+                            <a href="#">
+                                <img src="https://images.unsplash.com/photo-1543242594-c8bae8b9e708?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80"
+                                     alt="" width="150" height="150" />
+                            </a>
+                        </div>
+                        <div class="recent-port-widget-thumbnail">
+                            <a href="#">
+                                <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+                                     alt="" width="150" height="150" />
+                            </a>
+                        </div>
+                        <div class="recent-port-widget-thumbnail">
+                            <a href="#">
+                                <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+                                     alt="" width="150" height="150" />
+                            </a>
+                        </div>
+                        <div class="recent-port-widget-thumbnail">
+                            <a href="#">
+                                <img src="https://images.unsplash.com/photo-1480455454781-1af590be2a58?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80/"
+                                     alt="" width="150" height="150" />
+                            </a>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>*@
+
+        <div class="copyright-wrapper">
+            <div class="copyright-container container">
+                <div class="copyright-left">
+                    <a href="http://facebook.com/goodlayers">
+                        <i class="greennature-icon fa fa-facebook"
+                           style="vertical-align: middle;color: #bbbbbb;font-size: 20px"></i>
+                    </a> <a href="http://twitter.com/goodlayers">
+                        <i class="greennature-icon fa fa-twitter"
+                           style="vertical-align: middle;color: #bbbbbb;font-size: 20px"></i>
+                    </a> <a href="#">
+                        <i class="greennature-icon fa fa-dribbble"
+                           style="vertical-align: middle;color: #bbbbbb;font-size: 20px"></i>
+                    </a> <a href="#">
+                        <i class="greennature-icon fa fa-pinterest"
+                           style="vertical-align: middle;color: #bbbbbb;font-size: 20px"></i>
+                    </a> <a href="#">
+                        <i class="greennature-icon fa fa-google-plus"
+                           style="vertical-align: middle;color: #bbbbbb;font-size: 20px"></i>
+                    </a> <a href="#">
+                        <i class="greennature-icon fa fa-instagram"
+                           style="vertical-align: middle;color: #bbbbbb;font-size: 20px"></i>
+                    </a>
+                </div>
+                <div class="copyright-right">
+                    Copyright 2021 Electronic Payplus, All Right Reserved
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </footer>
+    <script type='text/javascript' src='js/jquery/jquery.js'></script>
+    <script type='text/javascript' src='js/jquery/jquery-migrate.min.js'></script>
+    <script>
+        var ms_grabbing_curosr = 'plugins/masterslider/public/assets/css/common/grabbing.html',
+            ms_grab_curosr = 'plugins/masterslider/public/assets/css/common/grab.html';
+    </script>
+    <script type='text/javascript' src='plugins/superfish/js/superfish.js'></script>
+    <script type='text/javascript' src='js/hoverIntent.min.js'></script>
+    <script type='text/javascript' src='plugins/dl-menu/modernizr.custom.js'></script>
+    <script type='text/javascript' src='plugins/dl-menu/jquery.dlmenu.js'></script>
+    <script type='text/javascript' src='plugins/jquery.easing.js'></script>
+    <script type='text/javascript' src='plugins/fancybox/jquery.fancybox.pack.js'></script>
+    <script type='text/javascript' src='plugins/fancybox/helpers/jquery.fancybox-media.js'></script>
+    <script type='text/javascript' src='plugins/fancybox/helpers/jquery.fancybox-thumbs.js'></script>
+    <script type='text/javascript' src='plugins/flexslider/jquery.flexslider.js'></script>
+    <script type='text/javascript' src='plugins/jquery.isotope.min.js'></script>
+    <script type='text/javascript' src='js/plugins.js'></script>
+    <script type='text/javascript' src='plugins/masterslider/public/assets/js/masterslider.min.js'></script>
+    <script type='text/javascript' src='plugins/jquery.transit.min.js'></script>
+    <script type='text/javascript' src='plugins/gdlr-portfolio/gdlr-portfolio-script.js'></script>
+
+
+
+
+    <script>
+        (function ($) {
+            "use strict";
+
+            $(function () {
+                var masterslider_d1da = new MasterSlider();
+
+                // slider controls
+                masterslider_d1da.control('arrows', { autohide: true, overVideo: true });
+                masterslider_d1da.control('bullets', { autohide: false, overVideo: true, dir: 'h', align: 'bottom', space: 6, margin: 25 });
+                // slider setup
+                masterslider_d1da.setup("slider_1", {
+                    width: 1140,
+                    height: 800,
+                    minHeight: 0,
+                    space: 0,
+                    start: 1,
+                    grabCursor: false,
+                    swipe: true,
+                    mouse: false,
+                    keyboard: true,
+                    layout: "fullwidth",
+                    wheel: false,
+                    autoplay: false,
+                    instantStartLayers: false,
+                    mobileBGVideo: false,
+                    loop: true,
+                    shuffle: false,
+                    preload: 0,
+                    heightLimit: true,
+                    autoHeight: false,
+                    smoothHeight: true,
+                    endPause: false,
+                    overPause: true,
+                    fillMode: "fill",
+                    centerControls: true,
+                    startOnAppear: false,
+                    layersMode: "center",
+                    autofillTarget: "",
+                    hideLayers: false,
+                    fullscreenMargin: 0,
+                    speed: 20,
+                    dir: "h",
+                    parallaxMode: 'swipe',
+                    view: "basic"
+                });
+
+
+
+                $("head").append("<link rel='stylesheet' id='ms-fonts'  href='http://fonts.googleapis.com/css?family=Montserrat:regular,700%7CCrimson+Text:regular' type='text/css' media='all' />");
+
+                window.masterslider_instances = window.masterslider_instances || {};
+                window.masterslider_instances["5_d1da"] = masterslider_d1da;
+            });
+
+        })(jQuery);
+    </script>
+
+
+
+
+    <script>
+        window.onload = function () {
+            document.getElementById('button').onclick = function () {
+                document.getElementById('modalOverlay').style.display = 'none'
+            };
+        };
+    </script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

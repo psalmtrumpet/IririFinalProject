@@ -1,0 +1,125 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout3.cshtml";
+    ViewData["Title"] = "Member Due";
+}
+
+<div class="main-content">
+
+    <div class="page-content">
+
+        <!-- start page title -->
+        <div class="page-title-box">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <div class="page-title">
+                            <h4>Payment History</h4>
+                            <!-- <ol class="breadcrumb m-0">
+                              <li class="breadcrumb-item"><a href="javascript: void(0);">Morvin</a></li>
+                              <li class="breadcrumb-item"><a href="javascript: void(0);">Layouts</a></li>
+                              <li class="breadcrumb-item active">Horizontal</li>
+                            </ol> -->
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="float-end d-none d-sm-block">
+                            <a href="" class="btn btn-success">Amount Dues=#20,000</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+        <div class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title mt-0">Pay Your Dues</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <a href="#">
+                            <p>How Many Months Are You Paying For?</p>
+
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="container-fluid">
+
+            <div class="page-content-wrapper">
+
+
+
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <button type="button" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal"
+                                        data-bs-target=".bs-example-modal-center">
+                                    Pay your dues
+                                </button>
+                                <!-- <h4 class="header-title">Example</h4>
+                                <p class="card-title-desc">This is an experimental awesome solution for responsive tables with
+                                  complex data.
+                                </p> -->
+                                <br>
+                                <div class="table-rep-plugin">
+                                    <div class="table-responsive mb-0" data-pattern="priority-columns">
+                                        <table id="tech-companies-1" class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>S/N</th>
+                                                    <th data-priority="1">Date Paid</th>
+                                                    <th data-priority="3">Amount Paid</th>
+                                                   
+                                                    <th data-priority="3">Payment Type</th>
+                                                   
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th> <span class="co-name">1</span></th>
+                                                    <td>Jan 8</td>
+                                                    <td>#100,000</td>
+                                                    <td>Dues</td>
+                                                    <!-- <td>597.95</td>
+                                                    <td>597.73 x 100</td>
+                                                    <td>597.91 x 300</td>
+                                                    <td>731.10</td> -->
+                                                </tr>
+                                             
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div> <!-- end col -->
+                </div> <!-- end row -->
+
+            </div>
+
+
+        </div> <!-- container-fluid -->
+
+
+    </div>
+    <!-- End Page-content -->
+
+
+
+
+</div>

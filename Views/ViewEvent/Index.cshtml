@@ -1,0 +1,203 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+    ViewData["Title"] = "Index";
+}
+<script src="https://unpkg.com/sweetalert@2.1.0/dist/sweetalert.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+<div class="main-content">
+
+    <div class="page-content">
+
+        <!-- start page title -->
+        <div class="page-title-box">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <div class="page-title">
+                            <h4>Customers</h4>
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Iriri</a></li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Event</a></li>
+                                <li class="breadcrumb-item active">VIew Event</li>
+                            </ol>
+                        </div>
+                    </div>
+                    @*<div class="col-sm-6">
+                            <div class="float-end d-none d-sm-block">
+                                <a href="" class="btn btn-success">Add Widget</a>
+                            </div>
+                        </div>*@
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+
+        <div class="container-fluid">
+
+            <div class="page-content-wrapper">
+
+
+
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <!-- <div>
+                                  <a href="javascript:void(0);" class="btn btn-success mb-2" type="button" data-bs-toggle="modal"
+                                    data-bs-target="#myModal"><i class="mdi mdi-plus me-2"></i>
+                                    Create
+                                    Event</a>
+                                </div> -->
+                                <div class="table-responsive mt-3">
+                                    <table class="table table-centered datatable dt-responsive nowrap "
+                                           style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                        <thead class="thead-light">
+                                            <tr>
+
+                                                <th>Event Title</th>
+
+
+                                                <th>Fees</th>
+                                                <th> Date</th>
+                                                <th style="width: 120px;">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @if (ViewBag.events != null)
+                                            {
+                                                foreach (var item in ViewBag.events)
+                                                {
+                                                    <tr>
+                                                        @*<td>
+                                                                <div class="form-check">
+                                                                    <input type="checkbox" class="form-check-input" id="customercheck1">
+                                                                    <label class="form-check-label" for="customercheck1">&nbsp;</label>
+                                                                </div>
+                                                            </td>*@
+                                                        <td style="display:none">@item.EventId</td>
+                                                        <td>@item.EventTitle</td>
+
+
+                                                        <td>
+                                                            @item.Amount
+                                                        </td>
+                                                        <td>
+                                                            @item.Date
+                                                        </td>
+                                                        <td id="tooltip-container0">
+
+                                                            <a href="#" onclick="Publish('@item.EventId')" id="edit" class="me-3 text-primary"data-bs-container="#tooltip-container0"
+                                                               data-bs-toggle="tooltip" data-bs-placement="top" title="Approve"><i class="mdi mdi-check font-size-18"></i></a>
+
+
+
+
+
+                                                            @*<a href="javascript:void(0);" class="text-danger" data-bs-container="#tooltip-container0"
+                                                               data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
+                                                                <i class="mdi mdi-trash-can font-size-18"></i>
+                                                            </a>*@
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            }
+
+
+
+
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+            </div>
+
+
+        </div>
+
+    </div>
+    <!-- End Page-content -->
+
+    <script>
+
+
+        function Publish(id) {
+            $.ajax({
+                type: "POST",
+                // traditional: true,
+                cache: false,
+                url: "/ViewEvent/PublishEvent",
+                data: { Id: id },//{ values: selectedIDs },
+                contentType: "application/x-www-form-urlencoded",
+                //  dataType: "json",
+                success: function () {
+                    swal({ title: 'Success', 'text': ('Event Published Successfully'), 'type': 'success' })
+                        .then(() => {
+                            //  $("#loadImg").hide();
+                            location.href = "/ViewEvent";//where you want to redirect after success
+                        });
+                },
+                error: function () {
+
+                    swal("Error", "Please try again", "error");
+                }
+                //success: setTimeout(function () {
+                //    Swal.fire({ title: 'Success', 'text': ('Pin Pushed successfully'), 'type': 'success' })
+                //        .then(() => {
+                //            location.href = "/Dashboard";//where you want to redirect after success
+                //        });
+                //})
+
+            });
+        }
+
+
+
+
+
+        $('#edit').on('click', function () {
+            var myModal = $('#myModal');
+
+            // now get the values from the table
+            var firstName = $(this).closest('tr').find('td.EventTitle').html();
+            var lastName = $(this).closest('tr').find('td.Amount').html();
+
+
+            // and set them in the modal:
+            $('#title', myModal).val(firstName);
+            $('#Amount', myModal).val(lastName);
+
+
+            // and finally show the modal
+            myModal.modal({ show: true });
+
+            return false;
+        });
+    </script>
+
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <script>document.write(new Date().getFullYear())</script> © Morvin.
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-end d-none d-sm-block">
+                        Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesdesign
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>

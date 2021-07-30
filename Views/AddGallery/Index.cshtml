@@ -1,0 +1,162 @@
+﻿
+@{ Layout = "~/Views/Shared/_Layout2.cshtml";
+    ViewData["Title"] = "Index"; }
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<div class="main-content">
+
+    <div class="page-content">
+
+        <!-- start page title -->
+        <div class="page-title-box">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <div class="page-title">
+                            <h4>Add Product</h4>
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Iriri</a></li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Gallery</a></li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="float-end d-none d-sm-block">
+                            <a href="view-gallery.html" class="btn btn-success">Add Gallery</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+
+        <div class="container-fluid">
+
+            <div class="page-content-wrapper">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <form>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="validationCustom01" class="form-label">Title</label>
+                                                <input type="text" class="form-control" id="Title" placeholder="Title" required>
+                                                <div class="valid-feedback">
+                                                    Looks good!
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="validationCustom02" class="form-label">Event Name</label>
+                                                <input type="text" class="form-control" id="EventName" placeholder="Event name"
+                                                       required>
+                                                <div class="valid-feedback">
+                                                    Looks good!
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label>Description</label>
+                                        <div>
+                                            <textarea required class="form-control" id="Description" rows="5"></textarea>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="header-title">upload image</h4>
+
+                                        <input type="file" id="files" name="files" multiple>
+                                    </div>
+
+                                    <div class="text-center mt-4">
+                                        <button type="button" id="fileButton" class="btn btn-primary waves-effect waves-light">Send Files</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+            </div>
+
+
+        </div> <!-- container-fluid -->
+    </div>
+    <!-- End Page-content -->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#fileButton").click(function () {
+                var files = $("#files").get(0).files;
+                //var file_data = $("#imgInp")[0].files[0];
+
+                var fileData = new FormData();
+                var title = $("#EventTitle").val();
+                var eventName = $("#EventName").val();
+                var description = $("#Description").val();
+                for (var i = 0; i < files.length; i++) {
+                    fileData.append("files", files[i]);
+                }
+                fileData.append("Title", title);
+                fileData.append("EventName", eventName);
+                fileData.append("Description", description);
+
+                $.ajax({
+                    type: "POST",
+                    url: "/AddGallery/UploadGallery",
+                    dataType: "json",
+                    contentType: false, // Not to set any content header
+                    processData: false, // Not to process data
+                    data: fileData,
+                    success: function () {
+                        Swal.fire({ title: 'Success', 'text': ('Images Added to Gallery successfully'), 'type': 'success' })
+                            .then(() => {
+                                //   $("#loadImg").hide();
+                                location.href = "/Dashboard";//where you want to redirect after success
+                            });
+                    },
+                    error: function (xhr, status, error) {
+                        swal("Error", "Please try again", "error");
+                    }
+                });
+            });
+
+            //$(document).ajaxStart(function () {
+            //    $("#loadingImg").show();
+            //    $("#fileButton").prop('disabled', true);
+            //});
+
+            //$(document).ajaxStop(function () {
+            //    $("#loadingImg").hide();
+            //    $("#fileButton").prop('disabled', false);
+            //    $("#fileInput").val("");
+            //});
+
+        });
+    </script>
+
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <script>document.write(new Date().getFullYear())</script> © Morvin.
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-end d-none d-sm-block">
+                        Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesdesign
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>

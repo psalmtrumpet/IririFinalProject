@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RegistrationForm_v3 by Colorlib</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- MATERIAL DESIGN ICONIC FONT -->
+    <link rel="stylesheet" href="~/Register/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+    <!-- STYLE CSS -->
+    <link rel="stylesheet" href="~/Register/css/style.css">
+</head>
+
+<body>
+
+    <div class="wrapper"
+         style="background-image: url(https://images.pexels.com/photos/1181438/pexels-photo-1181438.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);">
+        <div class="inner">
+            <form action="@Url.Action("Authenticate", "Login")">
+                <a href="../index.html" style="text-decoration: none;">
+                    <h3 style="color:#90ba92">The Iriri Dinig Club </h3>
+                </a>
+
+                <div class="form-group">
+
+
+
+                </div>
+                <div class="form-group">
+                    <div class="form-wrapper">
+                        <label for="">Email:</label>
+                        <div class="form-holder">
+                            <i style="font-style: normal; font-size: 15px;"></i>
+                            <input type="text"id="Email" name="userName" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-wrapper">
+                        <label for=""> Password:</label>
+                        <div class="form-holder">
+                            <i class="zmdi zmdi-lock-outline"></i>
+                            <input type="password" id="Password" name="password" class="form-control" placeholder="********">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-end">
+                    <div class="checkbox">
+                        <span>don't have an account? <a href="./register.html">Register</a> </span>
+                    </div>
+                    <div class="button-holder">
+                        <button  onclick="Authenticate()">Login</button><img src="~/Register/images/loader.gif" id="loadImg" style="display:none; width:50px; height:50px; " />
+                        
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+<script>
+
+
+    function Authenticate() {
+      
+        var chekEma = $('#Email').val();
+        alert(chekEma);
+        var chkPwd = $('#Password').val();
+        // alert(chekEma);
+        if (chekEma == "" || chkPwd == "") {
+            return Swal.fire("Error", "Fields cannot be empty!", "error");
+        }
+        //var data = $("#loginForm").serialize();
+
+        $("#loadImg").show();
+        $.ajax({
+            type: "Post",
+            url: "/Login/Authenticate",
+
+            data: { userName: chekEma, password: chkPwd },
+            success: function (response) {
+                if (response == "MEMBER") {
+                    $("#loadImg").hide();
+                    window.location.href = "/UserDashBoard";
+                }
+                else if (response == "ADMIN") {
+                    $("#loadImg").hide();
+                    window.location.href = "/Dashboard";
+                }
+
+
+
+                else {
+                    $("#loadImg").hide();
+                    setTimeout(function () {
+                        Swal.fire("Error", response, "error");
+                    }, 100)
+                }
+            }
+        })
+    }
+</script>
+
+</html>

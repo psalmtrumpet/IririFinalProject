@@ -1,0 +1,254 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+    ViewData["Title"] = "Index";
+}
+<script src="~/Dashboard2/assets/libs/dropzone/min/dropzone.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+<link href="~/Dashboard2/assets/js/jquery-ui.css" rel="stylesheet" />
+
+<meta charset=utf-8 />
+<script src="~/Dashboard2/assets/js/jquery-ui.js"></script>
+<div class="main-content">
+
+    <div class="page-content">
+
+        <!-- start page title -->
+        <div class="page-title-box">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <div class="page-title">
+                            <h4>Create Event</h4>
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Iriri</a></li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Event</a></li>
+                                <li class="breadcrumb-item active">Create Event</li>
+                            </ol>
+                        </div>
+                    </div>
+                    @*<div class="col-sm-6">
+                            <div class="float-end d-none d-sm-block">
+                                <a href="" class="btn btn-success">Add Widget</a>
+                            </div>
+                        </div>*@
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+
+        <div class="container-fluid">
+
+            <div class="page-content-wrapper">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            @*<form id="event-form"  >*@
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label>Event Title</label>
+                                                <input type="text" name="EventTitle" class="form-control" id="EventTitle" required placeholder="Event title" />
+                                                <div class="valid-feedback">
+                                                    Looks good!
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label>Date</label>
+
+                                                <input class="form-control" type="datetime-local" name="Date" id="EventDate">
+                                                <div class="valid-feedback">
+                                                    Looks good!
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="validationCustom02" class="form-label"> Event Venue</label>
+                                                <input type="text" class="form-control" name="EventVenue" id="EventVenue" placeholder="venue" required>
+                                                <div class="valid-feedback">
+                                                    Looks good!
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @*<div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="validationCustom02" class="form-label"> Event Time</label>
+                        <input type="datetime-local" class="form-control" id="EventTime" placeholder="Event Time" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>*@
+
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="validationCustom02" class="form-label"> Event Fee</label>
+                                                <input type="number" name="Amount" class="form-control" id="EventAmount" placeholder="Amount" required>
+                                                <div class="valid-feedback">
+                                                    Looks good!
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @*<div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="validationCustom03" class="form-label">Event Type</label>
+                        <select class="form-select" id="EventType" required>
+                            <option selected disabled value="">free</option>
+                            <option>paid</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select a valid state.
+                        </div>
+                    </div>
+                </div>*@
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label>Description</label>
+                                        <div>
+                                            <textarea required class="form-control" id="EventDescription" rows="5" name="EventDescription"></textarea>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="header-title">Upload Event Image</h4>
+                                        <input type='file' name="EventImage"   onchange="readURL(this)" id="imgInp" />
+                                        <img id="blah" />
+                                    </div>
+                                    @*<div>
+                <h4 class="header-title">upload image</h4>
+
+
+                <form action="@Url.Action("UploadEvent", "Event")" class="dropzone dz-clickable primary-dropzone" id="my-dropzone" enctype="multipart/form-data">
+                    <div class="dz-default dz-message">
+                        <i class="ti-gallery"></i>
+                        <span>Drag & Drop or Click To Upload Event Flier</span>
+                    </div>
+                </form>
+
+
+
+
+            </div>*@
+
+                                    <!--<div class="text-center mt-4">-->
+                                        @*<button type="submit"*@ <!--class="btn btn-primary waves-effect waves-light" id="btnSubmit">Create Event</button>-->
+                                    <!--</div>-->
+                                </div>
+                                <div class="button-holder">
+                                    <button type="button" class="btn btn-primary waves-effect waves-light" onclick="submitForm();" id="btnSubmit">Create Event</button>
+                                </div>
+                            @*</form>*@
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+            </div>
+
+
+        </div> <!-- container-fluid -->
+    </div>
+    <!-- End Page-content -->
+    <script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#imgInp").change(function () {
+        readURL(this);
+    });
+        function submitForm() {
+        //var postdata = $('#event-form').serialize();
+           // var fileUpload = $("#imgInp").get(0).files;
+           //var files = fileUpload.files.;
+           var file_data = $("#imgInp")[0].files[0];
+
+         //   var names = $.map(file_data);
+            //var rr = names.val();
+        var title = $("#EventTitle").val(); //document.getElementById('EventTitle').value;
+        var date = $("#EventDate").val(); //document.getElementById('EventDate').value;
+        var venue = $("#EventVenue").val();//document.getElementById('EventVenue').value;
+        var amount = $("#EventAmount").val();//document.getElementById('EventAmount').value;
+        var description = $("#EventDescription").val();//document.getElementById('EventDescription').value;
+          //  alert(file_data);
+
+
+            //if (file=="undefined"|| title =="" ||date == "" || venue =="" || amount =="" || description =="") {
+          //      return;
+          //  }
+          //  alert(title);
+            //alert(date);
+            //alert(venue);
+            //alert(amount);
+            //alert(description);
+            var fd = new FormData();
+            // fileData.append('files', file[0]);
+            fd.append("Files", file_data);
+            
+        fd.append("title", title);
+        fd.append("date", date);
+        fd.append("venue", venue);
+        fd.append("amount", amount);
+        fd.append("description", description);
+          
+        $.ajax({
+            type: "Post",
+            url: '/CreateEvent/UploadEvent',
+            data: fd,
+            //  dataType: 'json',
+            contentType: false,
+            processData: false,
+            success: function (response) {
+
+                if (response == "success") {
+                    $("#loadImg").hide();
+                    Swal.fire("Success", "Event Uploaded successfully", "success").then(() => {
+                        window.location.href = "/AdminViewEvent";//where you want to redirect after success
+                    });
+                }
+                else if (response != "success") {
+
+                    $("#loadImg").hide();
+                    Swal.fire("Error", "Error Uploading", "error");
+                }
+            }
+
+        });
+        //var xhr = new XMLHttpRequest();
+        //xhr.open("POST", "/Event/UploadEvent", false);
+        //xhr.send(fd);
+
+    }
+
+</script>
+
+
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <script>document.write(new Date().getFullYear())</script> © Iriri.
+                </div>
+
+            </div>
+        </div>
+    </footer>
+</div>
+
+

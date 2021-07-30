@@ -1,0 +1,182 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout3.cshtml";
+    ViewData["Title"] = "User/Dashboard";
+}
+
+<div class="main-content">
+
+    <div class="page-content">
+
+        <!-- start page title -->
+        <div class="page-title-box">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <div class="page-title">
+                            <h4>Welcome to Iriri Dining Club</h4>
+
+                            <!-- <ol class="breadcrumb m-0">
+                              <li class="breadcrumb-item"><a href="javascript: void(0);">Morvin</a></li>
+                              <li class="breadcrumb-item"><a href="javascript: void(0);">Layouts</a></li>
+                              <li class="breadcrumb-item active">Horizontal</li>
+                            </ol> -->
+                        </div>
+                    </div>
+                    <!-- <div class="col-sm-6">
+                      <div class="float-end d-none d-sm-block">
+                        <a href="" class="btn btn-success">Add Widget</a>
+                      </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+
+        <div class="container-fluid">
+
+            <div class="page-content-wrapper">
+                <h4 style="color:#fff;">Upcoming Events</h4>
+
+                <div class="row">
+                    <div class="col-sm-12">
+
+                        <div class="row" data-masonry='{"percentPosition": true }'>
+
+
+
+                            @if (ViewBag.events != null)
+                            {
+                                foreach (var item in ViewBag.events)
+                                {
+                                    <div class="col-md-6 col-xl-4">
+
+                                        <!-- Simple card -->
+                                        <div class="card">
+                                            <img class="card-img-top img-fluid"
+                                                 src="https://localhost:44312/api/Event/GetEventImageByName?fileName=@item.EventPicture"
+                                                 alt="Card image cap"style="height:350px;">
+                                            <div class="card-body">
+                                                <h4 class="card-title font-size-16 mt-0">@item.EventTitle</h4>
+                                                <p class="card-text">
+                                                   @item.EventDescription
+                                                </p>
+                                                <i class="mdi mdi-calendar card-text text-danger ">
+                                                    @item.Date
+                                                </i>
+
+                                                <i class="mdi mdi-google-maps card-text  text-success">
+                                                   @item.EventVenue
+
+                                                </i>
+                                                <br>
+                                                <br>
+                                                <a href="#" class="btn btn-primary waves-effect waves-light">
+                                                    Pay for
+                                                    Event
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                }
+                            }
+
+
+
+
+
+
+                        </div>
+                        <!-- end row -->
+                        <a href="/UpcomingEvent"
+                           class="btn btn-outline-primary waves-effect waves-light">
+                            View
+                            More Upcoming Events
+                        </a>
+                    </div>
+                </div>
+
+
+
+
+
+                <br>
+
+
+                <hr style="border: 20px;">
+                <div class="row">
+                    <div class="page-title">
+                        <h4>Past Events</h4>
+                        <!-- <ol class="breadcrumb m-0">
+                                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Morvin</a></li>
+                                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Layouts</a></li>
+                                                    <li class="breadcrumb-item active">Horizontal</li>
+                                                  </ol> -->
+                    </div>
+                    <div class="col-sm-12">
+
+                        <div class="row" data-masonry='{"percentPosition": true }'>
+
+
+                            @if (ViewBag.PastEvents != null)
+                            {
+                                foreach (var item in ViewBag.PastEvents)
+                                {
+                                    <div class="col-sm-6 col-lg-4">
+                                        <div class="card">
+                                            <img src="https://localhost:44312/api/Event/GetEventImageByName?fileName=@item.EventPicture" style="height:350px;">
+                                            <div class="card-body">
+                                                <h5 class="card-title">@item.EventTitle</h5>
+                                                <p class="card-text">
+                                                   @item.EventDescription
+                                                </p>
+
+                                                <i class="mdi mdi-calendar card-text text-danger ">
+                                                    @item.Date
+
+                                                </i>
+
+                                                <i class="mdi mdi-google-maps card-text  text-success">
+                                                   @item.EventVenue
+
+                                                </i>
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+
+
+
+
+
+
+
+
+                        </div>
+                        <!-- end row -->
+                        <a href="/PastEvent" class="btn btn-primary waves-effect waves-light">
+                            View
+                            More Past Events
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div> <!-- container-fluid -->
+
+
+    </div>
+    <!-- End Page-content -->
+
+
+
+
+</div>

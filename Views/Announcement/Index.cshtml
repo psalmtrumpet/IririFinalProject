@@ -1,0 +1,123 @@
+﻿@{
+     Layout = "~/Views/Shared/_Layout2.cshtml";
+     ViewData["Title"] = "Announcement";
+}
+
+<div class="main-content">
+
+    <div class="page-content">
+
+        <!-- start page title -->
+        <div class="page-title-box">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <div class="page-title">
+                            <h4>Form Editors</h4>
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Morvin</a></li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Forms</a></li>
+                                <li class="breadcrumb-item active">Form Editors</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="float-end d-none d-sm-block">
+                            <a href="" class="btn btn-success">Add Widget</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+
+        <div class="container-fluid">
+
+            <div class="page-content-wrapper">
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    @*<div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="validationCustom01" class="form-label">Announcement Title</label>
+                                            <input type="text" class="form-control" id="validationCustom01"
+                                                   placeholder="Announcement title" required>
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>
+                                        </div>
+                                    </div>*@
+                                    <div class="col-md-12">
+                                        <div class="mb-3">
+                                            <label for="validationCustom02" class="form-label">Date</label>
+                                            <input type="date" class="form-control" id="datePass" placeholder="12/05/2021" required>
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h2 class="header-title">Announcement</h2>
+
+
+                        
+                                    <textarea id="announce" name="w3review" rows="10" cols="50" style="width:100%;"></textarea>
+                                
+
+                            </div>
+                        </div>
+                    </div> <!-- end col -->
+                </div> <!-- end row -->
+
+
+
+
+
+
+            </div>
+
+
+        </div> <!-- container-fluid -->
+        <div>
+            <button class="btn btn-primary btn-lg btn-shadow" type="button" onclick="submitForm()">POST</button>
+        </div>
+    </div>
+    <!-- End Page-content -->
+
+
+
+   
+</div>
+<script>
+    function submitForm() {
+        var datePass = $('#datePass').val();
+        var elm1 = $('#announce').val();
+        
+        $.ajax({
+            type: "POST",
+            // traditional: true,
+            cache: false,
+            url: "/Announcement/CreateAnnouncement",
+            data: { AnnouceDate: datePass, Annoucement: elm1 },//{ values: selectedIDs },
+            contentType: "application/x-www-form-urlencoded",
+            //  dataType: "json",
+            success: setTimeout(function () {
+                Swal.fire("Success", "Announcement Published successfully", "success").then(() => {
+                    location.href = "/Dashboard";//where you want to redirect after success
+                });
+            }, 100)
+            //success: setTimeout(function () {
+            //    Swal.fire({ title: 'Success', 'text': ('Pin Pushed successfully'), 'type': 'success' })
+            //        .then(() => {
+            //            location.href = "/Dashboard";//where you want to redirect after success
+            //        });
+            //})
+
+        });
+    }
+  
+</script>
