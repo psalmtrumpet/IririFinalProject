@@ -81,21 +81,22 @@
         <form id="paymentForm">
             <div class="input-group">
                 <label for="email">Email Address</label>
-                <input type="email" id="email-address" required />
+                <input readonly type="email" value="@ViewBag.email"  id="email-address" required />
             </div>
             <div class="input-group">
                 <label for="amount">Amount</label>
-                <input type="tel" id="amount" required />
+                <input type="number" name="amount" id="amount" required />
             </div>
-            <div class="input-group">
+            @*<div class="input-group">
                 <label for="first-name">First Name</label>
                 <input type="text" id="first-name" />
             </div>
             <div class="input-group">
                 <label for="last-name">Last Name</label>
                 <input type="text" id="last-name" />
-            </div>
-            <button type="submit"  onclick="payWithPaystack()" class="login-button">Pay</button>
+            </div>*@
+            <button type="submit" onclick="payWithPaystack()" class="login-button">Pay</button>
+            <input type="" name="Plan" value="@ViewBag.email" id="emmail" style="display:none;" />
         </form>
     </div>
 </div>
@@ -106,8 +107,13 @@
 
 
 <script src="https://js.paystack.co/v1/inline.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <script>
+    
+    
+    //alert(em);
+    //$('#"email-address').val();
     const paymentForm = document.getElementById('paymentForm');
     paymentForm.addEventListener("submit", payWithPaystack, false);
     function payWithPaystack(e) {
@@ -123,13 +129,50 @@
             },
             callback: function (response) {
                 let message = 'Payment complete! Reference: ' + response.reference;
-                alert(response);
-                if (response.status =="success") {
-
+               
+                if (response.status == "success") {
+                    callMe(response.reference);
+                   
                 }
                 console.log(response);
             }
         });
         handler.openIframe();
+
+
+
+
+    }
+
+
+
+    function callMe(ref) {
+        var data = {
+            emailAddress: $('#email-address').val(),
+            paymentReference: ref,
+            amount: $('#amount').val()
+            
+        };
+      //  var em = $('#email-address').val();
+      //  console.log(data);
+        $.ajax({
+            type: "POST",
+            url: "Paystack/PaymentDetails",
+          //  dataType: "json",
+          //  contentType: false, // Not to set any content header
+           // processData: false, // Not to process data
+            data: data,
+            success: function () {
+                Swal.fire({ title: 'Success', 'text': ('Images Added to Gallery successfully'), 'type': 'success' })
+                    .then(() => {
+                        //   $("#loadImg").hide();
+                        location.href = "/Dashboard";//where you want to redirect after success
+                    });
+            },
+            error: function (xhr, status, error) {
+                swal("Error", "Please try again", "error");
+            }
+        });
+
     }
 </script>

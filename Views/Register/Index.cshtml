@@ -53,8 +53,9 @@
                     <div class="form-wrapper">
                         <label for="">Email:</label>
                         <div class="form-holder">
-                            <i style="font-style: normal; font-size: 15px;">tt</i>
-                            <input type="text" name="MemberEmail" value="" class="form-control">
+                            <i class="zmdi zmdi-email"></i>
+                            @*<i style="font-style: normal; font-size: 15px;"></i>*@
+                            <input type="email" name="MemberEmail" value="" class="form-control">
                         </div>
                     </div>
                     <div class="form-wrapper">
@@ -120,7 +121,7 @@
 
             var myform = document.getElementById("RegForm");
             var fd = new FormData(myform);
-            alert(fd);
+            
             jQuery.ajax({
                 url: "Register/Registration",
                 data: fd,

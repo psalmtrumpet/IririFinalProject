@@ -5,7 +5,7 @@
 <body data-rsssl=1
       class="home page-template-default page page-id-5680 _masterslider _msp_version_3.2.7 woocommerce-no-js">
     <div class="body-wrapper  float-menu" data-home="https://demo.goodlayers.com/greennature/">
-        
+
 
 
 
@@ -133,7 +133,7 @@
                     <div class="with-sidebar-wrapper">
                         <section id="content-section-1">
                             <h3 style="text-align:center;font-weight:bold;color:#0d550c;">
-                                 The Dining Club
+                                The Dining Club
                             </h3>
 
 
@@ -190,7 +190,7 @@
                                                                             ,
                                                                         </span>
                                                                         <!-- <a href="#"
-                                                        rel="tag">Renewable Energy</a> -->
+                                                                        rel="tag">Renewable Energy</a> -->
                                                                     </div>
                                                                     <div class="clear"></div>
                                                                 </div>
@@ -228,7 +228,7 @@
                                                                                   class="sep">
                                                                             </span>
                                                                             <!-- <a href="#"
-                                                            rel="tag">Animals</a> -->
+                                                                            rel="tag">Animals</a> -->
                                                                     </div>
                                                                     <div class="clear"></div>
                                                                 </div>
@@ -261,7 +261,7 @@
                                                                             Tags
                                                                         </span><a href="#" rel="tag"></a><span class="sep">,</span>
                                                                         <!-- <a href="#"
-                                                        rel="tag">Volunteer</a> -->
+                                                                        rel="tag">Volunteer</a> -->
                                                                     </div>
                                                                     <div class="clear"></div>
                                                                 </div>
@@ -295,7 +295,7 @@
                                                                         </span><a href="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80"
                                                                                   rel="tag"></a><span class="sep">,</span>
                                                                         <!-- <a href="#"
-                                                        rel="tag">Volunteer</a> -->
+                                                                        rel="tag">Volunteer</a> -->
                                                                     </div>
                                                                     <div class="clear"></div>
                                                                 </div>
@@ -373,7 +373,7 @@
                         <div class="greennature-newsletter-subscribe">
 
                             <div class="newsletter newsletter-subscription">
-                                <form method="post" action="#" onsubmit="return newsletter_check(this)" style=media
+                                <form method="post" action="#" onsubmit="return newsletter_check(this)" style= media
                                       only screen and (max-width: 600px) { form { width: 70%; } };>
                                     <input class="newsletter-email" type="email" name="ne" size="50" required
                                            placeholder="Please fill your email" />
@@ -405,3 +405,14 @@
 
 
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.0/jquery.cookie.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+<script type="text/javascript">
+    jquery.$(document).ready(function () {
+        if (jquery.$.cookie('pop') == null) {
+            jquery.$('#modalOverlay').modal('show');
+            jquery.$.cookie('pop', '1');
+        }
+    });
+</script>

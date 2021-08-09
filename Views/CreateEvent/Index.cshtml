@@ -219,7 +219,7 @@
                 if (response == "success") {
                     $("#loadImg").hide();
                     Swal.fire("Success", "Event Uploaded successfully", "success").then(() => {
-                        window.location.href = "/AdminViewEvent";//where you want to redirect after success
+                        window.location.href = "/CreateEvent";//where you want to redirect after success
                     });
                 }
                 else if (response != "success") {
