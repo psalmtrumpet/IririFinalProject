@@ -98,10 +98,10 @@
 
 
 
-                                                            @*<a href="javascript:void(0);" class="text-danger" data-bs-container="#tooltip-container0"
-                                                               data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
-                                                                <i class="mdi mdi-trash-can font-size-18"></i>
-                                                            </a>*@
+                                                            <a href="#" onclick="Teaser('@item.EventId')" class="text-pink" data-bs-container="#tooltip-container0"
+                                                               data-bs-toggle="tooltip" data-bs-placement="top" title="Teaser">
+                                                                <i class="mdi mdi-alert-circle font-size-18"></i>
+                                                            </a>
                                                         </td>
                                                     </tr>
                                                 }
@@ -161,7 +161,35 @@
 
             });
         }
+        function Teaser(id) {
+            $.ajax({
+                type: "POST",
+                // traditional: true,
+                cache: false,
+                url: "/ViewEvent/TeaserEvent",
+                data: { Id: id },//{ values: selectedIDs },
+                contentType: "application/x-www-form-urlencoded",
+                //  dataType: "json",
+                success: function () {
+                    swal({ title: 'Success', 'text': ('Event Teaser Posted Successfully'), 'type': 'success' })
+                        .then(() => {
+                            //  $("#loadImg").hide();
+                            location.href = "/ViewEvent";//where you want to redirect after success
+                        });
+                },
+                error: function () {
 
+                    swal("Error", "Please try again", "error");
+                }
+                //success: setTimeout(function () {
+                //    Swal.fire({ title: 'Success', 'text': ('Pin Pushed successfully'), 'type': 'success' })
+                //        .then(() => {
+                //            location.href = "/Dashboard";//where you want to redirect after success
+                //        });
+                //})
+
+            });
+        }
 
 
 

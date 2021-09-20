@@ -100,5 +100,50 @@ namespace IririFinalProject.Controllers
 
 
         }
+
+
+        public JsonResult TeaserEvent(Guid Id)
+        {
+            HttpResponseMessage result;
+            string response = string.Empty;
+            using (var client = new HttpClient())
+            {
+
+
+
+                try
+                {
+
+                    client.BaseAddress = new Uri(_appSettings.Value.host + "api/Event/MakeTeaser?Id=" + Id);
+
+                    var postTask = client.GetAsync("MakeTeaser?Id=" + Id);
+                    postTask.Wait();
+                    result = postTask.Result;
+                    if (result.IsSuccessStatusCode)
+                    {
+                        response = "success";
+                    }
+                    else
+                    {
+
+                        var response2 = result.Content.ReadAsStringAsync();
+
+
+                        return Json(new { Url = "Home/Index" });
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    var error = ex.Message + " " + ex.InnerException;
+                }
+
+            }
+            ModelState.AddModelError(string.Empty, "Server Error. Please contact administrator.");
+
+            return Json(response);
+
+
+        }
     }
 }

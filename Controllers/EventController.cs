@@ -7,6 +7,8 @@ using Microsoft.Extensions.Options;
 
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace IririFinalProject.Controllers
 {
@@ -22,6 +24,71 @@ namespace IririFinalProject.Controllers
 
         public IActionResult Index()
         {
+
+            IEnumerable<EventModel> events = null;
+            IEnumerable<EventModel> isTeaserEvents = null;
+            using (var client = new HttpClient())
+            {
+
+                client.BaseAddress = new Uri(_appSettings.Value.host + "api/Event/ViewPastEvents");
+                //HTTP GET
+
+                var responseTask = client.GetAsync("ViewPastEvents");
+                responseTask.Wait();
+
+                var result = responseTask.Result;
+                if (result.IsSuccessStatusCode)
+                {
+                    var readTask = result.Content.ReadAsAsync<IList<EventModel>>();
+                    readTask.Wait();
+
+                    events = readTask.Result;
+                }
+                else //web api sent error response 
+                {
+                    //log response status here..
+
+                    events = Enumerable.Empty<EventModel>();
+
+                    ModelState.AddModelError(string.Empty, "Server error. Please contact administrator.");
+                }
+
+
+            }
+
+            using (var client = new HttpClient())
+            {
+
+                client.BaseAddress = new Uri(_appSettings.Value.host + "api/Event/GetAllTeaserEvent");
+                //HTTP GET
+
+                var responseTask = client.GetAsync("GetAllTeaserEvent");
+                responseTask.Wait();
+
+                var result = responseTask.Result;
+                if (result.IsSuccessStatusCode)
+                {
+                    var readTask = result.Content.ReadAsAsync<IList<EventModel>>();
+                    readTask.Wait();
+
+                    isTeaserEvents = readTask.Result;
+                }
+                else //web api sent error response 
+                {
+                    //log response status here..
+
+                    events = Enumerable.Empty<EventModel>();
+
+                    ModelState.AddModelError(string.Empty, "Server error. Please contact administrator.");
+                }
+
+
+            }
+
+            ViewBag.events = events;
+            ViewBag.isTeaser = isTeaserEvents;
+
+
             return View();
         }
 

@@ -32,373 +32,73 @@
                                     <div class="greennature-item-title-head">
                                         <h3 class="greennature-item-title greennature-skin-title greennature-skin-border">
                                             <img src="upload/icon-5.png" alt="" width="80" height="80" />Our
-                                            Upcoming Events
+                                            Past Events
                                         </h3>
                                         <div class=" clear">
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="portfolio-item-wrapper type-classic-portfolio">
-                                <div class="portfolio-item-holder  greennature-portfolio-column-4">
-                                    <div class="greennature-isotope" data-type="portfolio" data-layout="fitRows">
+                          
+                                <div class="portfolio-item-wrapper type-classic-portfolio">
+                                    <div class="portfolio-item-holder  greennature-portfolio-column-4">
+                                        <div class="greennature-isotope" data-type="portfolio" data-layout="fitRows">
+                                            <div class="clear"></div>
+                                            @foreach (var item in ViewBag.events)
+                                            {
+                                                <div class="three columns">
+                                                    <div class="greennature-item greennature-portfolio-item greennature-classic-portfolio">
+                                                        <div class="greennature-ux greennature-classic-portfolio-ux">
+                                                            <div class="portfolio-thumbnail greennature-image">
+                                                                <img src="https://localhost:44312/api/Event/GetEventImageByName?fileName=@item.EventPicture"
+                                                                     alt="" width="540" height="326" /><span class="portfolio-overlay">&nbsp;</span><a class="portfolio-overlay-icon"
+                                                                                                                                                       href="https://localhost:44312/api/Event/GetEventImageByName?fileName=@item.EventPicture"
+                                                                                                                                                       data-rel="fancybox"><span class="portfolio-icon"><i class="fa fa-link"></i></span></a>
+                                                            </div>
+                                                            <div class="portfolio-classic-content">
+                                                                <h3 class="portfolio-title">
+                                                                    @*<a href="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+
+                                                                    </a>*@
+                                                                    @item.EventTitle
+                                                                </h3>
+                                                                <div class="greennature-portfolio-info">
+                                                                    <div class="portfolio-info portfolio-tag">
+                                                                        <span class="info-head greennature-title">
+                                                                            Tags
+                                                                        </span><a href="https://localhost:44312/api/Event/GetEventImageByName?fileName=@item.EventPicture"
+                                                                                  rel="tag"> @item.Date</a><span class="sep">
+                                                                                    ,
+                                                                                </span>
+                                                                                <!-- <a href="#"
+                                                    rel="tag">Renewable Energy</a> -->
+                                                                            </div>
+                                                                            <div class="clear"></div>
+                                                                        </div>
+                                                                        <div class="portfolio-excerpt">
+                                                                            @item.EventDescription
+                                                                            <div class="clear"></div><a href="https://localhost:44312/api/Event/GetEventImageByName?fileName=@item.EventPicture"
+                                                                                                        class="excerpt-read-more">Read More</a>
+                                                                        </div><a class="portfolio-classic-learn-more" href="#">
+                                                                            Learn
+                                                                            More
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+
+                                            }
+
+                                                    </div>
                                         <div class="clear"></div>
-                                        <div class="three columns">
-                                            <div class="greennature-item greennature-portfolio-item greennature-classic-portfolio">
-                                                <div class="greennature-ux greennature-classic-portfolio-ux">
-                                                    <div class="portfolio-thumbnail greennature-image">
-                                                        <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-                                                             alt="" width="540" height="326" /><span class="portfolio-overlay">&nbsp;</span><a class="portfolio-overlay-icon"
-                                                                                                                                               href="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-                                                                                                                                               data-rel="fancybox"><span class="portfolio-icon"><i class="fa fa-link"></i></span></a>
-                                                    </div>
-                                                    <div class="portfolio-classic-content">
-                                                        <h3 class="portfolio-title">
-                                                            <a href="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
-                                                                Iriri
-                                                                Dining Club
-                                                                Golf Tour
-                                                            </a>
-                                                        </h3>
-                                                        <div class="greennature-portfolio-info">
-                                                            <div class="portfolio-info portfolio-tag">
-                                                                <span class="info-head greennature-title">
-                                                                    Tags
-                                                                </span><a href="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-                                                                          rel="tag">12th June</a><span class="sep">
-                                                                    ,
-                                                                </span>
-                                                                <!-- <a href="#"
-                                                                                                    rel="tag">Renewable Energy</a> -->
-                                                            </div>
-                                                            <div class="clear"></div>
-                                                        </div>
-                                                        <div class="portfolio-excerpt">
-                                                            Lorem ipsum dolor sit amet,
-                                                            consectetur adipisici elit, sed eiusmod tempor incidunt
-                                                            ut labore et dolore magna aliqua....
-                                                            <div class="clear"></div><a href="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-                                                                                        class="excerpt-read-more">Read More</a>
-                                                        </div><a class="portfolio-classic-learn-more" href="#">
-                                                            Learn
-                                                            More
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="three columns">
-                                            <div class="greennature-item greennature-portfolio-item greennature-classic-portfolio">
-                                                <div class="greennature-ux greennature-classic-portfolio-ux">
-                                                    <div class="portfolio-thumbnail greennature-image">
-                                                        <img src="https://images.unsplash.com/photo-1515169067868-5387ec356754?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-                                                             alt="" width="540" height="326" /><span class="portfolio-overlay">&nbsp;</span><a class="portfolio-overlay-icon"
-                                                                                                                                               href="https://images.unsplash.com/photo-1515169067868-5387ec356754?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
-                                                            <span class="portfolio-icon"><i class="fa fa-link"></i></span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="portfolio-classic-content">
-                                                        <h3 class="portfolio-title">
-                                                            <a href="https://images.unsplash.com/photo-1515169067868-5387ec356754?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
-                                                                Iriri
-                                                                DInner Event
-                                                            </a>
-                                                        </h3>
-                                                        <div class="greennature-portfolio-info">
-                                                            <div class="portfolio-info portfolio-tag">
-                                                                <span class="info-head greennature-title">
-                                                                    Tags
-                                                                </span><a href="https://images.unsplash.com/photo-1515169067868-5387ec356754?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-                                                                          rel="tag">16th Augest</a><span class="sep">,</span>
-                                                                <!-- <a href="#"
-                                                                                                    rel="tag">Animals</a> -->
-                                                            </div>
-                                                            <div class="clear"></div>
-                                                        </div>
-                                                        <div class="portfolio-excerpt">
-                                                            Lorem ipsum dolor sit amet,
-                                                            consectetur adipisici elit, sed eiusmod tempor incidunt
-                                                            ut labore et dolore magna aliqua....
-                                                            <div class="clear"></div><a href="#" class="excerpt-read-more">Read More</a>
-                                                        </div><a class="portfolio-classic-learn-more" href="#">
-                                                            Learn
-                                                            More
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="three columns">
-                                            <div class="greennature-item greennature-portfolio-item greennature-classic-portfolio">
-                                                <div class="greennature-ux greennature-classic-portfolio-ux">
-                                                    <div class="portfolio-thumbnail greennature-image">
-                                                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80"
-                                                             alt="" width="540" height="326" /><span class="portfolio-overlay">&nbsp;</span><a class="portfolio-overlay-icon"
-                                                                                                                                               href="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80"
-                                                                                                                                               data-rel="fancybox"><span class="portfolio-icon"><i class="fa fa-link"></i></span></a>
-                                                    </div>
-                                                    <div class="portfolio-classic-content">
-                                                        <h3 class="portfolio-title">
-                                                            <a href="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80">
-                                                                Business
-                                                                Conference
-                                                            </a>
-                                                        </h3>
-                                                        <div class="greennature-portfolio-info">
-                                                            <div class="portfolio-info portfolio-tag">
-                                                                <span class="info-head greennature-title">
-                                                                    Tags
-                                                                </span><a href="#" rel="tag">10th July</a><span class="sep">,</span>
-                                                                <!-- <a href="#"
-                                                                                                    rel="tag">Volunteer</a> -->
-                                                            </div>
-                                                            <div class="clear"></div>
-                                                        </div>
-                                                        <div class="portfolio-excerpt">
-                                                            Lorem ipsum dolor sit amet,
-                                                            consectetur adipisici elit, sed eiusmod tempor incidunt
-                                                            ut labore et dolore magna aliqua....
-                                                            <div class="clear"></div><a href="#" class="excerpt-read-more">Read More</a>
-                                                        </div><a class="portfolio-classic-learn-more" href="#">
-                                                            Learn
-                                                            More
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="three columns">
-                                            <div class="greennature-item greennature-portfolio-item greennature-classic-portfolio">
-                                                <div class="greennature-ux greennature-classic-portfolio-ux">
-                                                    <div class="portfolio-thumbnail greennature-image">
-                                                        <img src="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80"
-                                                             alt="" width="540" height="326" /><span class="portfolio-overlay">&nbsp;</span><a class="portfolio-overlay-icon"
-                                                                                                                                               href="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80">
-                                                            <span class="portfolio-icon"><i class="fa fa-link"></i></span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="portfolio-classic-content">
-                                                        <h3 class="portfolio-title">
-                                                            <a href="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80">
-                                                                Iriri
-                                                                Dining Club
-                                                                Celebrates Our Doctors
-                                                            </a>
-                                                        </h3>
-                                                        <div class="greennature-portfolio-info">
-                                                            <div class="portfolio-info portfolio-tag">
-                                                                <span class="info-head greennature-title">
-                                                                    Tags
-                                                                </span><a href="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80"
-                                                                          rel="tag">18th Sep</a><span class="sep">,</span>
-                                                                <!-- <a href="#"
-                                                                                                    rel="tag">Volunteer</a> -->
-                                                            </div>
-                                                            <div class="clear"></div>
-                                                        </div>
-                                                        <div class="portfolio-excerpt">
-                                                            Lorem ipsum dolor sit amet,
-                                                            consectetur adipisici elit, sed eiusmod tempor incidunt
-                                                            ut labore et dolore magna aliqua....
-                                                            <div class="clear"></div><a href="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80"
-                                                                                        class="excerpt-read-more">Read More</a>
-                                                        </div><a class="portfolio-classic-learn-more"
-                                                                 href="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80">
-                                                            Learn
-                                                            More
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-
-
                                     </div>
-                                    <div class="clear"></div>
                                 </div>
-                            </div>
-                            <div class="portfolio-item-wrapper type-classic-portfolio">
-                                <div class="portfolio-item-holder  greennature-portfolio-column-4">
-                                    <div class="greennature-isotope" data-type="portfolio" data-layout="fitRows">
-                                        <div class="clear"></div>
-                                        <div class="three columns">
-                                            <div class="greennature-item greennature-portfolio-item greennature-classic-portfolio">
-                                                <div class="greennature-ux greennature-classic-portfolio-ux">
-                                                    <div class="portfolio-thumbnail greennature-image">
-                                                        <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-                                                             alt="" width="540" height="326" /><span class="portfolio-overlay">&nbsp;</span><a class="portfolio-overlay-icon"
-                                                                                                                                               href="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-                                                                                                                                               data-rel="fancybox"><span class="portfolio-icon"><i class="fa fa-link"></i></span></a>
-                                                    </div>
-                                                    <div class="portfolio-classic-content">
-                                                        <h3 class="portfolio-title">
-                                                            <a href="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
-                                                                Iriri
-                                                                Dining Club
-                                                                Golf Tour
-                                                            </a>
-                                                        </h3>
-                                                        <div class="greennature-portfolio-info">
-                                                            <div class="portfolio-info portfolio-tag">
-                                                                <span class="info-head greennature-title">
-                                                                    Tags
-                                                                </span><a href="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-                                                                          rel="tag">12th June</a><span class="sep">
-                                                                    ,
-                                                                </span>
-                                                                <!-- <a href="#"
-                                                                                                    rel="tag">Renewable Energy</a> -->
-                                                            </div>
-                                                            <div class="clear"></div>
-                                                        </div>
-                                                        <div class="portfolio-excerpt">
-                                                            Lorem ipsum dolor sit amet,
-                                                            consectetur adipisici elit, sed eiusmod tempor incidunt
-                                                            ut labore et dolore magna aliqua....
-                                                            <div class="clear"></div><a href="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-                                                                                        class="excerpt-read-more">Read More</a>
-                                                        </div><a class="portfolio-classic-learn-more" href="#">
-                                                            Learn
-                                                            More
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="three columns">
-                                            <div class="greennature-item greennature-portfolio-item greennature-classic-portfolio">
-                                                <div class="greennature-ux greennature-classic-portfolio-ux">
-                                                    <div class="portfolio-thumbnail greennature-image">
-                                                        <img src="https://images.unsplash.com/photo-1515169067868-5387ec356754?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-                                                             alt="" width="540" height="326" /><span class="portfolio-overlay">&nbsp;</span><a class="portfolio-overlay-icon"
-                                                                                                                                               href="https://images.unsplash.com/photo-1515169067868-5387ec356754?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
-                                                            <span class="portfolio-icon"><i class="fa fa-link"></i></span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="portfolio-classic-content">
-                                                        <h3 class="portfolio-title">
-                                                            <a href="https://images.unsplash.com/photo-1515169067868-5387ec356754?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
-                                                                Iriri
-                                                                DInner Event
-                                                            </a>
-                                                        </h3>
-                                                        <div class="greennature-portfolio-info">
-                                                            <div class="portfolio-info portfolio-tag">
-                                                                <span class="info-head greennature-title">
-                                                                    Tags
-                                                                </span><a href="https://images.unsplash.com/photo-1515169067868-5387ec356754?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-                                                                          rel="tag">16th Augest</a><span class="sep">,</span>
-                                                                <!-- <a href="#"
-                                                                                                    rel="tag">Animals</a> -->
-                                                            </div>
-                                                            <div class="clear"></div>
-                                                        </div>
-                                                        <div class="portfolio-excerpt">
-                                                            Lorem ipsum dolor sit amet,
-                                                            consectetur adipisici elit, sed eiusmod tempor incidunt
-                                                            ut labore et dolore magna aliqua....
-                                                            <div class="clear"></div><a href="#" class="excerpt-read-more">Read More</a>
-                                                        </div><a class="portfolio-classic-learn-more" href="#">
-                                                            Learn
-                                                            More
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="three columns">
-                                            <div class="greennature-item greennature-portfolio-item greennature-classic-portfolio">
-                                                <div class="greennature-ux greennature-classic-portfolio-ux">
-                                                    <div class="portfolio-thumbnail greennature-image">
-                                                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80"
-                                                             alt="" width="540" height="326" /><span class="portfolio-overlay">&nbsp;</span><a class="portfolio-overlay-icon"
-                                                                                                                                               href="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80"
-                                                                                                                                               data-rel="fancybox"><span class="portfolio-icon"><i class="fa fa-link"></i></span></a>
-                                                    </div>
-                                                    <div class="portfolio-classic-content">
-                                                        <h3 class="portfolio-title">
-                                                            <a href="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80">
-                                                                Business
-                                                                Conference
-                                                            </a>
-                                                        </h3>
-                                                        <div class="greennature-portfolio-info">
-                                                            <div class="portfolio-info portfolio-tag">
-                                                                <span class="info-head greennature-title">
-                                                                    Tags
-                                                                </span><a href="#" rel="tag">10th July</a><span class="sep">,</span>
-                                                                <!-- <a href="#"
-                                                                                                    rel="tag">Volunteer</a> -->
-                                                            </div>
-                                                            <div class="clear"></div>
-                                                        </div>
-                                                        <div class="portfolio-excerpt">
-                                                            Lorem ipsum dolor sit amet,
-                                                            consectetur adipisici elit, sed eiusmod tempor incidunt
-                                                            ut labore et dolore magna aliqua....
-                                                            <div class="clear"></div><a href="#" class="excerpt-read-more">Read More</a>
-                                                        </div><a class="portfolio-classic-learn-more" href="#">
-                                                            Learn
-                                                            More
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="three columns">
-                                            <div class="greennature-item greennature-portfolio-item greennature-classic-portfolio">
-                                                <div class="greennature-ux greennature-classic-portfolio-ux">
-                                                    <div class="portfolio-thumbnail greennature-image">
-                                                        <img src="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80"
-                                                             alt="" width="540" height="326" /><span class="portfolio-overlay">&nbsp;</span><a class="portfolio-overlay-icon"
-                                                                                                                                               href="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80">
-                                                            <span class="portfolio-icon"><i class="fa fa-link"></i></span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="portfolio-classic-content">
-                                                        <h3 class="portfolio-title">
-                                                            <a href="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80">
-                                                                Iriri
-                                                                Dining Club
-                                                                Celebrates Our Doctors
-                                                            </a>
-                                                        </h3>
-                                                        <div class="greennature-portfolio-info">
-                                                            <div class="portfolio-info portfolio-tag">
-                                                                <span class="info-head greennature-title">
-                                                                    Tags
-                                                                </span><a href="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80"
-                                                                          rel="tag">18th Sep</a><span class="sep">,</span>
-                                                                <!-- <a href="#"
-                                                                                                    rel="tag">Volunteer</a> -->
-                                                            </div>
-                                                            <div class="clear"></div>
-                                                        </div>
-                                                        <div class="portfolio-excerpt">
-                                                            Lorem ipsum dolor sit amet,
-                                                            consectetur adipisici elit, sed eiusmod tempor incidunt
-                                                            ut labore et dolore magna aliqua....
-                                                            <div class="clear"></div><a href="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80"
-                                                                                        class="excerpt-read-more">Read More</a>
-                                                        </div><a class="portfolio-classic-learn-more"
-                                                                 href="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80">
-                                                            Learn
-                                                            More
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                            
 
 
-
-
-                                    </div>
-                                    <div class="clear"></div>
-                                </div>
-                            </div>
                             <div class="clear"></div>
                             <div class="clear"></div>
                         </div>
@@ -414,365 +114,65 @@
                                     <div class="greennature-item-title-head">
                                         <h3 class="greennature-item-title greennature-skin-title greennature-skin-border">
                                             <img src="upload/icon-5.png" alt="" width="80" height="80" />Our
-                                            Previous  Events
+                                            Upcoming  Events
                                         </h3>
                                         <div class=" clear">
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="portfolio-item-wrapper type-classic-portfolio">
                                 <div class="portfolio-item-holder  greennature-portfolio-column-4">
                                     <div class="greennature-isotope" data-type="portfolio" data-layout="fitRows">
                                         <div class="clear"></div>
-                                        <div class="three columns">
-                                            <div class="greennature-item greennature-portfolio-item greennature-classic-portfolio">
-                                                <div class="greennature-ux greennature-classic-portfolio-ux">
-                                                    <div class="portfolio-thumbnail greennature-image">
-                                                        <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-                                                             alt="" width="540" height="326" /><span class="portfolio-overlay">&nbsp;</span><a class="portfolio-overlay-icon"
-                                                                                                                                               href="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-                                                                                                                                               data-rel="fancybox"><span class="portfolio-icon"><i class="fa fa-link"></i></span></a>
-                                                    </div>
-                                                    <div class="portfolio-classic-content">
-                                                        <h3 class="portfolio-title">
-                                                            <a href="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
-                                                                Iriri
-                                                                Dining Club
-                                                                Golf Tour
-                                                            </a>
-                                                        </h3>
-                                                        <div class="greennature-portfolio-info">
-                                                            <div class="portfolio-info portfolio-tag">
-                                                                <span class="info-head greennature-title">
-                                                                    Tags
-                                                                </span><a href="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-                                                                          rel="tag">12th June</a><span class="sep">
-                                                                    ,
-                                                                </span>
-                                                                <!-- <a href="#"
-                                                                                                    rel="tag">Renewable Energy</a> -->
-                                                            </div>
-                                                            <div class="clear"></div>
+
+                                        @foreach (var item in ViewBag.isTeaser)
+                                        {
+                                            <div class="three columns">
+                                                <div class="greennature-item greennature-portfolio-item greennature-classic-portfolio">
+                                                    <div class="greennature-ux greennature-classic-portfolio-ux">
+                                                        <div class="portfolio-thumbnail greennature-image">
+                                                            <img src="https://localhost:44312/api/Event/GetEventImageByName?fileName=@item.EventPicture"
+                                                                 alt="" width="540" height="326" /><span class="portfolio-overlay">&nbsp;</span><a class="portfolio-overlay-icon"
+                                                                                                                                                   href="https://localhost:44312/api/Event/GetEventImageByName?fileName=@item.EventPicture"
+                                                                                                                                                   data-rel="fancybox"><span class="portfolio-icon"><i class="fa fa-link"></i></span></a>
                                                         </div>
-                                                        <div class="portfolio-excerpt">
-                                                            Lorem ipsum dolor sit amet,
-                                                            consectetur adipisici elit, sed eiusmod tempor incidunt
-                                                            ut labore et dolore magna aliqua....
-                                                            <div class="clear"></div><a href="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-                                                                                        class="excerpt-read-more">Read More</a>
-                                                        </div><a class="portfolio-classic-learn-more" href="#">
-                                                            Learn
-                                                            More
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="three columns">
-                                            <div class="greennature-item greennature-portfolio-item greennature-classic-portfolio">
-                                                <div class="greennature-ux greennature-classic-portfolio-ux">
-                                                    <div class="portfolio-thumbnail greennature-image">
-                                                        <img src="https://images.unsplash.com/photo-1515169067868-5387ec356754?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-                                                             alt="" width="540" height="326" /><span class="portfolio-overlay">&nbsp;</span><a class="portfolio-overlay-icon"
-                                                                                                                                               href="https://images.unsplash.com/photo-1515169067868-5387ec356754?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
-                                                            <span class="portfolio-icon"><i class="fa fa-link"></i></span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="portfolio-classic-content">
-                                                        <h3 class="portfolio-title">
-                                                            <a href="https://images.unsplash.com/photo-1515169067868-5387ec356754?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
-                                                                Iriri
-                                                                DInner Event
-                                                            </a>
-                                                        </h3>
-                                                        <div class="greennature-portfolio-info">
-                                                            <div class="portfolio-info portfolio-tag">
-                                                                <span class="info-head greennature-title">
-                                                                    Tags
-                                                                </span><a href="https://images.unsplash.com/photo-1515169067868-5387ec356754?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-                                                                          rel="tag">16th Augest</a><span class="sep">,</span>
-                                                                <!-- <a href="#"
-                                                                                                    rel="tag">Animals</a> -->
+                                                        <div class="portfolio-classic-content">
+                                                            <h3 class="portfolio-title">
+                                                                @*<a href="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+
+                                </a>*@
+                                                                @item.EventTitle
+                                                            </h3>
+                                                            <div class="greennature-portfolio-info">
+                                                                <div class="portfolio-info portfolio-tag">
+                                                                    <span class="info-head greennature-title">
+                                                                        Tags
+                                                                    </span><a href="https://localhost:44312/api/Event/GetEventImageByName?fileName=@item.EventPicture"
+                                                                              rel="tag"> @item.Date</a><span class="sep">
+                                                                                ,
+                                                                            </span>
+                                                                            <!-- <a href="#"
+                                        rel="tag">Renewable Energy</a> -->
+                                                                        </div>
+                                                                        <div class="clear"></div>
+                                                                    </div>
+                                                                    <div class="portfolio-excerpt">
+                                                                        @item.EventDescription
+                                                                        <div class="clear"></div><a href="https://localhost:44312/api/Event/GetEventImageByName?fileName=@item.EventPicture"
+                                                                                                    class="excerpt-read-more">Read More</a>
+                                                                    </div><a class="portfolio-classic-learn-more" href="#">
+                                                                        Learn
+                                                                        More
+                                                                    </a>
+                                                                </div>
                                                             </div>
-                                                            <div class="clear"></div>
                                                         </div>
-                                                        <div class="portfolio-excerpt">
-                                                            Lorem ipsum dolor sit amet,
-                                                            consectetur adipisici elit, sed eiusmod tempor incidunt
-                                                            ut labore et dolore magna aliqua....
-                                                            <div class="clear"></div><a href="#" class="excerpt-read-more">Read More</a>
-                                                        </div><a class="portfolio-classic-learn-more" href="#">
-                                                            Learn
-                                                            More
-                                                        </a>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="three columns">
-                                            <div class="greennature-item greennature-portfolio-item greennature-classic-portfolio">
-                                                <div class="greennature-ux greennature-classic-portfolio-ux">
-                                                    <div class="portfolio-thumbnail greennature-image">
-                                                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80"
-                                                             alt="" width="540" height="326" /><span class="portfolio-overlay">&nbsp;</span><a class="portfolio-overlay-icon"
-                                                                                                                                               href="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80"
-                                                                                                                                               data-rel="fancybox"><span class="portfolio-icon"><i class="fa fa-link"></i></span></a>
-                                                    </div>
-                                                    <div class="portfolio-classic-content">
-                                                        <h3 class="portfolio-title">
-                                                            <a href="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80">
-                                                                Business
-                                                                Conference
-                                                            </a>
-                                                        </h3>
-                                                        <div class="greennature-portfolio-info">
-                                                            <div class="portfolio-info portfolio-tag">
-                                                                <span class="info-head greennature-title">
-                                                                    Tags
-                                                                </span><a href="#" rel="tag">10th July</a><span class="sep">,</span>
-                                                                <!-- <a href="#"
-                                                                                                    rel="tag">Volunteer</a> -->
-                                                            </div>
-                                                            <div class="clear"></div>
-                                                        </div>
-                                                        <div class="portfolio-excerpt">
-                                                            Lorem ipsum dolor sit amet,
-                                                            consectetur adipisici elit, sed eiusmod tempor incidunt
-                                                            ut labore et dolore magna aliqua....
-                                                            <div class="clear"></div><a href="#" class="excerpt-read-more">Read More</a>
-                                                        </div><a class="portfolio-classic-learn-more" href="#">
-                                                            Learn
-                                                            More
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="three columns">
-                                            <div class="greennature-item greennature-portfolio-item greennature-classic-portfolio">
-                                                <div class="greennature-ux greennature-classic-portfolio-ux">
-                                                    <div class="portfolio-thumbnail greennature-image">
-                                                        <img src="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80"
-                                                             alt="" width="540" height="326" /><span class="portfolio-overlay">&nbsp;</span><a class="portfolio-overlay-icon"
-                                                                                                                                               href="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80">
-                                                            <span class="portfolio-icon"><i class="fa fa-link"></i></span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="portfolio-classic-content">
-                                                        <h3 class="portfolio-title">
-                                                            <a href="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80">
-                                                                Iriri
-                                                                Dining Club
-                                                                Celebrates Our Doctors
-                                                            </a>
-                                                        </h3>
-                                                        <div class="greennature-portfolio-info">
-                                                            <div class="portfolio-info portfolio-tag">
-                                                                <span class="info-head greennature-title">
-                                                                    Tags
-                                                                </span><a href="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80"
-                                                                          rel="tag">18th Sep</a><span class="sep">,</span>
-                                                                <!-- <a href="#"
-                                                                                                    rel="tag">Volunteer</a> -->
-                                                            </div>
-                                                            <div class="clear"></div>
-                                                        </div>
-                                                        <div class="portfolio-excerpt">
-                                                            Lorem ipsum dolor sit amet,
-                                                            consectetur adipisici elit, sed eiusmod tempor incidunt
-                                                            ut labore et dolore magna aliqua....
-                                                            <div class="clear"></div><a href="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80"
-                                                                                        class="excerpt-read-more">Read More</a>
-                                                        </div><a class="portfolio-classic-learn-more"
-                                                                 href="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80">
-                                                            Learn
-                                                            More
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                                }
 
 
-
-
-                                    </div>
-                                    <div class="clear"></div>
-                                </div>
-                            </div>
-                            <div class="portfolio-item-wrapper type-classic-portfolio">
-                                <div class="portfolio-item-holder  greennature-portfolio-column-4">
-                                    <div class="greennature-isotope" data-type="portfolio" data-layout="fitRows">
-                                        <div class="clear"></div>
-                                        <div class="three columns">
-                                            <div class="greennature-item greennature-portfolio-item greennature-classic-portfolio">
-                                                <div class="greennature-ux greennature-classic-portfolio-ux">
-                                                    <div class="portfolio-thumbnail greennature-image">
-                                                        <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-                                                             alt="" width="540" height="326" /><span class="portfolio-overlay">&nbsp;</span><a class="portfolio-overlay-icon"
-                                                                                                                                               href="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-                                                                                                                                               data-rel="fancybox"><span class="portfolio-icon"><i class="fa fa-link"></i></span></a>
-                                                    </div>
-                                                    <div class="portfolio-classic-content">
-                                                        <h3 class="portfolio-title">
-                                                            <a href="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
-                                                                Iriri
-                                                                Dining Club
-                                                                Golf Tour
-                                                            </a>
-                                                        </h3>
-                                                        <div class="greennature-portfolio-info">
-                                                            <div class="portfolio-info portfolio-tag">
-                                                                <span class="info-head greennature-title">
-                                                                    Tags
-                                                                </span><a href="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-                                                                          rel="tag">12th June</a><span class="sep">
-                                                                    ,
-                                                                </span>
-                                                                <!-- <a href="#"
-                                                                                                    rel="tag">Renewable Energy</a> -->
-                                                            </div>
-                                                            <div class="clear"></div>
-                                                        </div>
-                                                        <div class="portfolio-excerpt">
-                                                            Lorem ipsum dolor sit amet,
-                                                            consectetur adipisici elit, sed eiusmod tempor incidunt
-                                                            ut labore et dolore magna aliqua....
-                                                            <div class="clear"></div><a href="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-                                                                                        class="excerpt-read-more">Read More</a>
-                                                        </div><a class="portfolio-classic-learn-more" href="#">
-                                                            Learn
-                                                            More
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="three columns">
-                                            <div class="greennature-item greennature-portfolio-item greennature-classic-portfolio">
-                                                <div class="greennature-ux greennature-classic-portfolio-ux">
-                                                    <div class="portfolio-thumbnail greennature-image">
-                                                        <img src="https://images.unsplash.com/photo-1515169067868-5387ec356754?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-                                                             alt="" width="540" height="326" /><span class="portfolio-overlay">&nbsp;</span><a class="portfolio-overlay-icon"
-                                                                                                                                               href="https://images.unsplash.com/photo-1515169067868-5387ec356754?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
-                                                            <span class="portfolio-icon"><i class="fa fa-link"></i></span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="portfolio-classic-content">
-                                                        <h3 class="portfolio-title">
-                                                            <a href="https://images.unsplash.com/photo-1515169067868-5387ec356754?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
-                                                                Iriri
-                                                                DInner Event
-                                                            </a>
-                                                        </h3>
-                                                        <div class="greennature-portfolio-info">
-                                                            <div class="portfolio-info portfolio-tag">
-                                                                <span class="info-head greennature-title">
-                                                                    Tags
-                                                                </span><a href="https://images.unsplash.com/photo-1515169067868-5387ec356754?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-                                                                          rel="tag">16th Augest</a><span class="sep">,</span>
-                                                                <!-- <a href="#"
-                                                                                                    rel="tag">Animals</a> -->
-                                                            </div>
-                                                            <div class="clear"></div>
-                                                        </div>
-                                                        <div class="portfolio-excerpt">
-                                                            Lorem ipsum dolor sit amet,
-                                                            consectetur adipisici elit, sed eiusmod tempor incidunt
-                                                            ut labore et dolore magna aliqua....
-                                                            <div class="clear"></div><a href="#" class="excerpt-read-more">Read More</a>
-                                                        </div><a class="portfolio-classic-learn-more" href="#">
-                                                            Learn
-                                                            More
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="three columns">
-                                            <div class="greennature-item greennature-portfolio-item greennature-classic-portfolio">
-                                                <div class="greennature-ux greennature-classic-portfolio-ux">
-                                                    <div class="portfolio-thumbnail greennature-image">
-                                                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80"
-                                                             alt="" width="540" height="326" /><span class="portfolio-overlay">&nbsp;</span><a class="portfolio-overlay-icon"
-                                                                                                                                               href="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80"
-                                                                                                                                               data-rel="fancybox"><span class="portfolio-icon"><i class="fa fa-link"></i></span></a>
-                                                    </div>
-                                                    <div class="portfolio-classic-content">
-                                                        <h3 class="portfolio-title">
-                                                            <a href="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80">
-                                                                Business
-                                                                Conference
-                                                            </a>
-                                                        </h3>
-                                                        <div class="greennature-portfolio-info">
-                                                            <div class="portfolio-info portfolio-tag">
-                                                                <span class="info-head greennature-title">
-                                                                    Tags
-                                                                </span><a href="#" rel="tag">10th July</a><span class="sep">,</span>
-                                                                <!-- <a href="#"
-                                                                                                    rel="tag">Volunteer</a> -->
-                                                            </div>
-                                                            <div class="clear"></div>
-                                                        </div>
-                                                        <div class="portfolio-excerpt">
-                                                            Lorem ipsum dolor sit amet,
-                                                            consectetur adipisici elit, sed eiusmod tempor incidunt
-                                                            ut labore et dolore magna aliqua....
-                                                            <div class="clear"></div><a href="#" class="excerpt-read-more">Read More</a>
-                                                        </div><a class="portfolio-classic-learn-more" href="#">
-                                                            Learn
-                                                            More
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="three columns">
-                                            <div class="greennature-item greennature-portfolio-item greennature-classic-portfolio">
-                                                <div class="greennature-ux greennature-classic-portfolio-ux">
-                                                    <div class="portfolio-thumbnail greennature-image">
-                                                        <img src="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80"
-                                                             alt="" width="540" height="326" /><span class="portfolio-overlay">&nbsp;</span><a class="portfolio-overlay-icon"
-                                                                                                                                               href="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80">
-                                                            <span class="portfolio-icon"><i class="fa fa-link"></i></span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="portfolio-classic-content">
-                                                        <h3 class="portfolio-title">
-                                                            <a href="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80">
-                                                                Iriri
-                                                                Dining Club
-                                                                Celebrates Our Doctors
-                                                            </a>
-                                                        </h3>
-                                                        <div class="greennature-portfolio-info">
-                                                            <div class="portfolio-info portfolio-tag">
-                                                                <span class="info-head greennature-title">
-                                                                    Tags
-                                                                </span><a href="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80"
-                                                                          rel="tag">18th Sep</a><span class="sep">,</span>
-                                                                <!-- <a href="#"
-                                                                                                    rel="tag">Volunteer</a> -->
-                                                            </div>
-                                                            <div class="clear"></div>
-                                                        </div>
-                                                        <div class="portfolio-excerpt">
-                                                            Lorem ipsum dolor sit amet,
-                                                            consectetur adipisici elit, sed eiusmod tempor incidunt
-                                                            ut labore et dolore magna aliqua....
-                                                            <div class="clear"></div><a href="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80"
-                                                                                        class="excerpt-read-more">Read More</a>
-                                                        </div><a class="portfolio-classic-learn-more"
-                                                                 href="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80">
-                                                            Learn
-                                                            More
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
 
 
 

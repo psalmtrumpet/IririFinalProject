@@ -60,18 +60,23 @@
                                             <div class="card-body">
                                                 <h4 class="card-title font-size-16 mt-0">@item.EventTitle</h4>
                                                 <p class="card-text">
-                                                   @item.EventDescription
+                                                    @item.EventDescription
                                                 </p>
                                                 <i class="mdi mdi-calendar card-text text-danger ">
                                                     @item.Date
                                                 </i>
 
                                                 <i class="mdi mdi-google-maps card-text  text-success">
-                                                   @item.EventVenue
+                                                    @item.EventVenue
 
                                                 </i>
-                                                <br>
-                                                <br>
+                                                <i>
+                                                    <p>Amount : <b>@item.Amount</b></p> 
+
+                                                </i>
+                                               
+
+
                                                 <a href="#" class="btn btn-primary waves-effect waves-light">
                                                     Pay for
                                                     Event

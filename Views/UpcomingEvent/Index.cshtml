@@ -70,10 +70,14 @@
                                                 </i>
                                                 <br>
                                                 <br>
-                                                <a href="#" class="btn btn-primary waves-effect waves-light">
+                                                <p id="em"></p>
+                                                @*<p id="amount">@item.Amount</p>*@
+                                                <a href="#" onclick="callFunction(@item.Amount);" class="btn btn-primary waves-effect waves-light">
+
                                                     Pay for
                                                     Event
                                                 </a>
+
                                             </div>
                                         </div>
 
@@ -83,7 +87,12 @@
                             }
 
 
-
+                            <script>
+                                function callFunction(amount) {
+                                  //  var url = '@Url.Action("Index", "EventPaystack")';
+                                    window.location.href = '/EventPaystack?amount=' + amount;
+                                }
+                            </script>
 
 
 

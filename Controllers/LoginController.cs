@@ -51,10 +51,10 @@ namespace IririFinalProject.Controllers
                     priviledges = readTask.Result;
 
 
-                  //  HttpContext.Session.SetString("Priviledges", JsonConvert.SerializeObject(priviledges));
+                    HttpContext.Session.SetString("Priviledges", JsonConvert.SerializeObject(loginModel));
+                   
 
-
-                  //  var res = JsonConvert.DeserializeObject<UserInfo>(HttpContext.Session.GetString("Priviledges"));
+                    //  var res = JsonConvert.DeserializeObject<UserInfo>(HttpContext.Session.GetString("Priviledges"));
                     var ss = string.Empty;
                     var memberId = priviledges.memberId;
                  //   HttpContext.Session.SetString("MemberId", JsonConvert.SerializeObject(memberId));
