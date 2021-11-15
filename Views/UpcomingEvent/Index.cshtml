@@ -56,13 +56,14 @@
                                                  src="https://localhost:44312/api/Event/GetEventImageByName?fileName=@item.EventPicture"
                                                  alt="Card image cap" style="height:350px;">
                                             <div class="card-body">
-                                                <h4 class="card-title font-size-16 mt-0">@item.EventTitle</h4>
+                                                <h4 class="card-title font-size-16 mt-0" id="title4">@item.EventTitle</h4>
                                                 <p class="card-text">
                                                     @item.EventDescription
                                                 </p>
                                                 <i class="mdi mdi-calendar card-text text-danger ">
                                                     @item.Date
                                                 </i>
+                                                
 
                                                 <i class="mdi mdi-google-maps card-text  text-success">
                                                     @item.EventVenue
@@ -88,9 +89,14 @@
 
 
                             <script>
+                              
+                               
                                 function callFunction(amount) {
+
+                                    var title = document.getElementById("title4").innerText;
+                                    alert(title);
                                   //  var url = '@Url.Action("Index", "EventPaystack")';
-                                    window.location.href = '/EventPaystack?amount=' + amount;
+                                    window.location.href = '/EventPaystack?amount=' + amount + "&title="+title;
                                 }
                             </script>
 

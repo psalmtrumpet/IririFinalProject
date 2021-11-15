@@ -109,19 +109,23 @@
                     <div class="greennature-color-wrapper  gdlr-show-all no-skin"
                          style="background-color: #ffffff; padding-bottom: 25px; ">
                         <div class="container">
-                            <div class="greennature-item-title-wrapper greennature-item  greennature-left-divider greennature-medium ">
-                                <div class="greennature-item-title-container container">
-                                    <div class="greennature-item-title-head">
-                                        <h3 class="greennature-item-title greennature-skin-title greennature-skin-border">
-                                            <img src="upload/icon-5.png" alt="" width="80" height="80" />Our
-                                            Upcoming  Events
-                                        </h3>
-                                        <div class=" clear">
+                            @if (ViewBag.isTeaser.Count > 0)
+                            {
+                                <div class="greennature-item-title-wrapper greennature-item  greennature-left-divider greennature-medium ">
+                                    <div class="greennature-item-title-container container">
+                                        <div class="greennature-item-title-head">
+                                            <h3 class="greennature-item-title greennature-skin-title greennature-skin-border">
+                                                <img src="upload/icon-5.png" alt="" width="80" height="80" />Our
+                                                Upcoming  Events
+                                            </h3>
+                                            <div class=" clear">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            
+                            }
+
+
                             <div class="portfolio-item-wrapper type-classic-portfolio">
                                 <div class="portfolio-item-holder  greennature-portfolio-column-4">
                                     <div class="greennature-isotope" data-type="portfolio" data-layout="fitRows">
@@ -142,7 +146,7 @@
                                                             <h3 class="portfolio-title">
                                                                 @*<a href="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
 
-                                </a>*@
+                                            </a>*@
                                                                 @item.EventTitle
                                                             </h3>
                                                             <div class="greennature-portfolio-info">
@@ -154,7 +158,7 @@
                                                                                 ,
                                                                             </span>
                                                                             <!-- <a href="#"
-                                        rel="tag">Renewable Energy</a> -->
+                                                    rel="tag">Renewable Energy</a> -->
                                                                         </div>
                                                                         <div class="clear"></div>
                                                                     </div>

@@ -35,10 +35,6 @@ namespace IririFinalProject.Controllers
         //}
         public async Task<ActionResult> Registration(RegisterModel Model)
         {
-            //var res =  SaveImageAsync(formcollection.Files[0]);
-
-
-          
             HttpResponseMessage result;
             string response = string.Empty;
             using (var client = new HttpClient())

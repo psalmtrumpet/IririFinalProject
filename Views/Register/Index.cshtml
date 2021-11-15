@@ -6,6 +6,9 @@
 <!DOCTYPE html>
 <script src="https://unpkg.com/sweetalert@2.1.0/dist/sweetalert.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Benne&display=swap" rel="stylesheet">
 
 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
 <html>
@@ -19,12 +22,14 @@
     <link rel="stylesheet" href="~/Register/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Benne&display=swap" rel="stylesheet">
     
+
 
     <!-- STYLE CSS -->
     <link rel="stylesheet" href="~/Register/css/style.css">
+    
 </head>
+
 
 <body>
 
@@ -33,22 +38,22 @@
         <div class="inner">
             <form id="RegForm">
                 <a href="/Home" style="text-decoration: none; ">
-                    <h3 style="color:#0d550c;
-        font-family: 'Open Sans'" >The Iriri Dinig Club </h3>
+                    <h3 style="color:#0d550c;font-family: Benne;">The Iriri Dining Club </h3>
                 </a>
                 <div class="form-group">
                     <div class="form-wrapper">
-                        <label for="">First name:</label>
+                        <label for="" style="color:#0d550c;font-family: Benne;">First name:</label>
                         <div class="form-holder">
                             <i class="zmdi zmdi-account-o"></i>
-                            <input type="text" name="FirstName" value="" class="form-control">
+                            <input type="text" name="FirstName" id="fName" value="" class="form-control">
                         </div>
                     </div>
                     <div class="form-wrapper">
-                        <label for="">Last name:</label>
+                        <label for="" style="        color: #0d550c;
+        font-family: Benne;">Last name:</label>
                         <div class="form-holder">
                             <i class="zmdi zmdi-account-o"></i>
-                            <input type="text" name="LastName" value="" class="form-control">
+                            <input type="text" name="LastName" id="lName" value="" class="form-control">
                             <input type="" name="Plan" value="@ViewBag.package" id="package" style="display:none;" />
                         </div>
                     </div>
@@ -56,64 +61,65 @@
                 </div>
                 <div class="form-group">
                     <div class="form-wrapper">
-                        <label for="">Email:</label>
+                        <label for="" style="color:#0d550c; font-family: Benne; ">Email:</label>
                         <div class="form-holder">
                             <i class="zmdi zmdi-email"></i>
                             @*<i style="font-style: normal; font-size: 15px;"></i>*@
-                            <input type="email" name="MemberEmail" value="" class="form-control">
+                            <input type="email" id="email" name="MemberEmail" value="" class="form-control">
                         </div>
                     </div>
                     <div class="form-wrapper">
-                        <label for=""> Phone Number</label>
+                        <label for="" style="color:#0d550c; font-family: Benne; "> Phone Number</label>
                         <div class="form-holder">
                             <i class="zmdi zmdi-lock-outline"></i>
-                            <input type="number" name="MemberPhone" value="" class="form-control" placeholder="Phone Number">
+                            <input type="number" name="MemberPhone" id="phone" value="" class="form-control" placeholder="Phone Number">
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="form-wrapper">
-                        <label for="">Gender:</label>
+                        <label for="" style="color:#0d550c;font-family: Benne;" ">Gender:</label>
                         <div class="form-holder select">
-                            <select name="Gender" id="" class="form-control">
+                            <select name="Gender" id="gender" class="form-control">
                                 <option value="male">Male</option>
-                                <option value="femal">Female</option>
+                                <option value="female">Female</option>
                                 <option value="other">Other</option>
                             </select>
                             <i class="zmdi zmdi-face"></i>
                         </div>
                     </div>
                     <div class="form-wrapper">
-                        <label for="">Date of Birth</label>
+                        <label for="" style="color:#0d550c; font-family: Benne;">Date of Birth</label>
                         <div class="form-holder">
-                            <input type="Date" name="DOB" value="" class="form-control" placeholder="jul 20">
+                            <input type="Date" name="DOB" id="dob" value="" class="form-control" placeholder="jul 20">
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="form-wrapper">
-                        <label for="">Occupation:</label>
+                        <label for="" style="color:#0d550c; font-family: Benne;">Occupation:</label>
                         <div class="form-holder">
                             <i aria-hidden="true" class="zmdi zmdi-calendar"></i>
-                            <input type="text" name="Occupation" value="" class="form-control" placeholder="Occupation">
+                            <input type="text" id="occupation" name="Occupation" value="" class="form-control" placeholder="Occupation">
                         </div>
                     </div>
 
                     <div class="form-wrapper">
-                        <label for="">Address:</label>
+                        <label for="" style="color:#0d550c;font-family: Benne; ">Address:</label>
                         <div class="form-holder">
                             <i aria-hidden="true" class="fa-location-arrow"></i>
-                            <input type="text" name="MemberAddress" value="" class="form-control" placeholder="Address">
+                            <input type="text" id="add" name="MemberAddress"  value="" class="form-control" placeholder="Address">
                         </div>
                     </div>
 
                 </div>
                 <div class="form-end">
                     <div class="checkbox">
-                        <span>already have an account? <a href="/Login">Login</a> </span>
+                        <span>already have an account? <a href="/Login" style="        color: #0d550c;font-family: Benne; ">Login</a> </span>
                     </div>
                     <div class="button-holder">
-                        <button type="button" id="sweet-alert-demo" onclick="submitform()">Register Now</button>
+                        <button type="button" id="sweet-alert-demo" onclick="submitform()" style="        background-color: #0d550c
+">Register Now</button>
                     </div>
 
                 </div>
@@ -123,10 +129,25 @@
     <script>
 
         function submitform() {
+            var em = $('#add').val();
+            var occup = $('#occupation').val();
+            var dob = $('#dob').val();
+            var gender = $('#gender').val();
+            var phone = $('#phone').val();
+            var email = $('#email').val();
+            var fName = $('#fName').val();
+            var lName = $('#lName').val();
+            var plan = $('#package').val();
+            
 
+            if (em == "" || occup == "" || dob == "" || gender == "" || phone == "" || email == "" || fName == "" || lName =="" || plan=="" ) {
+                return  alert("Ensure all fields are filled");
+            }
+
+         else
             var myform = document.getElementById("RegForm");
             var fd = new FormData(myform);
-            
+
             jQuery.ajax({
                 url: "Register/Registration",
                 data: fd,
@@ -137,7 +158,7 @@
                 success: function () {
                     swal({ title: 'Success', 'text': ('Thank you for your intrest in becoming a member of THE IRIRI DINING CLUB. A member of the club will get in touch with you as soon as possible.'), 'type': 'success' })
                         .then(() => {
-                          //  $("#loadImg").hide();
+                            //  $("#loadImg").hide();
                             location.href = "/Home";//where you want to redirect after success
                         });
                 },

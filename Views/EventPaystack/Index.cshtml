@@ -94,19 +94,20 @@
             </div>
             <div class="input-group">
                 <label for="amount">Amount</label>
-                <input readonly  value="@ViewBag.amount" name="amount" id="amount" required />
+                <input readonly value="@ViewBag.amount" name="amount" id="amount" required />
             </div>
             @*<div class="input-group">
-                    <label for="first-name">First Name</label>
-                    <input type="text" id="first-name" />
-                </div>
-                <div class="input-group">
-                    <label for="last-name">Last Name</label>
-                    <input type="text" id="last-name" />
-                </div>*@
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" />
+        </div>
+        <div class="input-group">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" />
+        </div>*@
             <button type="submit" onclick="payWithPaystack()" class="login-button">Pay</button>
             <input type="" name="Plan" value="@ViewBag.email" id="emmail" style="display:none;" />
             <input type="" name="Plan" value="@ViewBag.amount" id="amount" style="display:none;" />
+            <input type="" name="Plan" value="@ViewBag.title" id="title" style="display:none;" />
 
         </form>
     </div>
@@ -130,7 +131,7 @@
     function payWithPaystack(e) {
         e.preventDefault();
         let handler = PaystackPop.setup({
-            key: 'pk_test_b7143e4b19b8d4bf6a64f1bcc51c2cd8dfa0c31d', // Replace with your public key
+            key: 'pk_test_ef008a6aaa32f7a6101eb7edfa5dbc99ed5989f1', // Replace with your public key
             email: document.getElementById("email-address").value,
             amount: document.getElementById("amount").value * 100,
             ref: '' + Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
@@ -159,16 +160,20 @@
 
     function callMe(ref) {
         var data = {
-            emailAddress: $('#email-address').val(),
+
+
+ 
+            email: $('#emmail').val(),
             paymentReference: ref,
-            amount: $('#amount').val()
+            amount: $('#amount').val(),
+            EventPaymentPlanName: $('#title').val()
 
         };
       //  var em = $('#email-address').val();
       //  console.log(data);
         $.ajax({
             type: "POST",
-            url: "Paystack/PaymentDetails",
+            url: "EventPaystack/EventDues",
           //  dataType: "json",
           //  contentType: false, // Not to set any content header
            // processData: false, // Not to process data

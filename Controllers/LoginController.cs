@@ -25,7 +25,7 @@ namespace IririFinalProject.Controllers
         }
 
 
-        public async Task<ActionResult> Authenticate(LoginModel loginModel)
+        public JsonResult Authenticate(LoginModel loginModel)
         {
             //var email = loginModel.Email;
             //var password = loginModel.Password;
@@ -37,20 +37,13 @@ namespace IririFinalProject.Controllers
                 client.BaseAddress = new Uri(_appSettings.Value.host + "api/MemberUser/Login");
 
                 var responseTask = client.PostAsJsonAsync<LoginModel>("Login", loginModel);
-                //  client.BaseAddress = new Uri(_appSettings.Value.host + "account/login?email=" + email + "&password=" + password);
-                //HTTP GET
-                // var responseTask = client.GetAsync("login?email=" + email + "&password=" + password);
                 responseTask.Wait();
-
-
                 var result = responseTask.Result;
                 if (result.IsSuccessStatusCode)
                 {
                     var readTask = result.Content.ReadAsAsync<LoginResponse>();
                     readTask.Wait();
                     priviledges = readTask.Result;
-
-
                     HttpContext.Session.SetString("Priviledges", JsonConvert.SerializeObject(loginModel));
                    
 
@@ -60,14 +53,14 @@ namespace IririFinalProject.Controllers
                  //   HttpContext.Session.SetString("MemberId", JsonConvert.SerializeObject(memberId));
                     response = priviledges.role[0];
 
-                    if (response =="MEMBER")
-                    {
-                        return RedirectToAction("Index", "UserDashboard");
-                    }
-                    else
-                    {
-                        return RedirectToAction("Index", "Dashboard");
-                    }
+                    //if (response =="MEMBER")
+                    //{
+                    //    return RedirectToAction("Index", "UserDashboard");
+                    //}
+                    //else
+                    //{
+                    //    return RedirectToAction("Index", "Dashboard");
+                    //}
 
 
 
@@ -79,14 +72,16 @@ namespace IririFinalProject.Controllers
                     priviledges = null;
                     var response2 = result.Content.ReadAsStringAsync();
                     string res = response2.Result;
-                    return RedirectToAction("Index", "Home");
-                    string[] words = res.Split(',');
-                    var splitedword = words[1];
-                    var splitedcolumn = splitedword.Split(":");
-                    var message = splitedcolumn[1];
-                    var message2 = message.Replace("\"", "");
-                    response = message2;
-                    // response = "failed";
+                    //  return RedirectToAction("Index", "Login");
+                    string words = res.Replace("{ ", "");
+                    string words2 = res.Replace("}", "");
+                    string words23 = res.Replace("}", "");
+                    //var splitedword = words[1];
+                    //var splitedcolumn = splitedword.Split(":");
+                    //var message = splitedcolumn[1];
+                    //var message2 = message.Replace("\"", "");
+                    //  response = message2;
+                    response = "failed";
 
                     // ModelState.AddModelError(string.Empty, "Server error. Please contact administrator.");
 
@@ -95,6 +90,9 @@ namespace IririFinalProject.Controllers
 
                 
             }
+
+
+            return Json(response);
         }
 
 

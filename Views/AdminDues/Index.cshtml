@@ -1,0 +1,237 @@
+﻿@{
+    // Layout = "";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+    ViewData["Title"] = "AdminDues";
+}
+<div class="main-content">
+
+    <div class="page-content">
+
+        <!-- start page title -->
+        <div class="page-title-box">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <div class="page-title">
+                            <h4>Customers</h4>
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Iriri</a></li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Admin</a></li>
+                                <li class="breadcrumb-item active">Dues</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="float-end d-none d-sm-block">
+                            @*<a href="" class="btn btn-success">Add Widget</a>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+
+        <div class="container-fluid">
+
+            <div class="page-content-wrapper">
+
+
+
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div>
+                                    @*<a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect waves-light"
+                                       data-bs-toggle="modal" data-bs-target=".bs-example-modal-center">
+                                        <i class="mdi mdi-plus me-2"></i>
+                                        Setup Dues
+                                    </a>*@
+                                </div>
+                                <div class="table-responsive mt-3">
+                                    <table class="table table-centered datatable dt-responsive nowrap "
+                                           style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                        <thead class="thead-light">
+                                            <tr>
+
+                                                <th>Payment Plan</th>
+                                                <th>Amount</th>
+                                                <th style="width: 120px;">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @if (ViewBag.plans != null)
+                                            {
+                                                foreach (var item in ViewBag.plans)
+                                                {
+                                                    <tr>
+                                                        <td> @item.PaymentPlanName</td>
+                                                        <td> @item.cost</td>
+                                                        <td>
+                                                            <button class="btn-primary" id="@item.PaymentPlanId" onclick="Details('@item.PaymentPlanId')"> Update</button>
+                                                            @*<a class="btn btn-default btn-sm" id="@item.PaymentPlanId" onclick="Details('@item.PaymentPlanId')">Update</a>*@
+                                                            @*<a href="javascript:void(0);" class="me-3 text-primary"
+           data-bs-toggle="modal" data-bs-target=".bs-example-modal-center">
+            <i class="mdi mdi-pencil font-size-18"></i>
+
+        </a>*@
+                                                        </td>
+
+                                                        @*<td id="tooltip-container0">
+
+                                                                <a href="javascript:void(0);" class="me-3 text-primary" data-bs-toggle="modal"
+                                                                   data-bs-target="#myModal1"><i class="mdi mdi-pencil font-size-18"></i></a>
+                                                                </a>
+
+
+
+
+                                                                <a href="javascript:void(0);" class="text-danger" data-bs-container="#tooltip-container0"
+                                                                   data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
+                                                                    <i class="mdi mdi-trash-can font-size-18"></i>
+                                                                </a>
+                                                            </td>*@
+                                                    </tr>
+                                                    @*<tr>
+                                                            <td>
+                                                                <div class="form-check">
+                                                                    <input type="checkbox" class="form-check-input" id="customercheck1">
+                                                                    <label class="form-check-label" for="customercheck1">&nbsp;</label>
+                                                                </div>
+                                                            </td>
+
+                                                            <td>Carolyn Harvey</td>
+                                                            <td>#30,000</td>
+
+
+                                                            <td>
+                                                                06 Apr, 2020
+                                                            </td>
+                                                            <td id="tooltip-container0">
+
+                                                                <a href="javascript:void(0);" class="me-3 text-primary" data-bs-toggle="modal"
+                                                                   data-bs-target="#myModal1"><i class="mdi mdi-pencil font-size-18"></i></a>
+                                                                </a>
+
+
+
+
+                                                                <a href="javascript:void(0);" class="text-danger" data-bs-container="#tooltip-container0"
+                                                                   data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
+                                                                    <i class="mdi mdi-trash-can font-size-18"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>*@
+                                                }
+                                            }
+
+
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+            </div>
+
+
+        </div> <!-- container-fluid -->
+    </div>
+    <!-- End Page-content -->
+
+
+
+
+</div>
+<div class="rightbar-overlay"></div>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+         Modal content
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Dues</h4>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+@*<div class="modal fade bs-example-modal-center" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0">Edit Dues</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="custom-validation" action="#">
+                    <div class="mb-3">
+
+
+                        <div class="mb-3">
+                            <label>Name</label>
+                            <div>
+                                <input type="number" id="amount" class="form-control" required placeholder="Name" />
+                            </div>
+
+                        </div>
+                        <div class="mb-3">
+                            <label>Amount</label>
+                            <div>
+                                <input type="number" id="amount" class="form-control" required placeholder="amount" />
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+
+                        <div class="mb-0">
+                            <div>
+                                <button type="submit" class="btn btn-primary waves-effect waves-light me-1">
+                                    Submit
+                                </button>
+                                <button type="reset" class="btn btn-secondary waves-effect">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+</form>
+            </div>
+        </div>
+    </div>
+</div>*@
+<script>
+    function Details(id) {
+       // alert(id);
+           // $.get("@Url.Action("Modal","AdminDues")/" + id,
+                //function (data) {
+                //    $('.modal-body').html(data);
+                //});
+
+                //$("#myModal").modal("show");
+      //  var url = "/AdminDues/Modal?id=" + id;
+       window.location.href = '@Url.Action("Modal", "AdminDues")/' + id;
+       
+        }
+</script>
